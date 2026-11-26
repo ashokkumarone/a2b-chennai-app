@@ -46,8 +46,8 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     
     .veg-box {
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
       border: 1.5px solid #16A34A;
       display: inline-flex;
       align-items: center;
@@ -57,8 +57,8 @@
       flex-shrink: 0;
     }
     .veg-box .veg-dot {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       background-color: #16A34A;
       border-radius: 50%;
     }
@@ -193,8 +193,8 @@
             </div>
 
             <img 
-              src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80" 
-              alt="A2B Dosa"
+              src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg/400px-Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg" 
+              alt="A2B Ghee Roast"
               class="absolute -right-6 top-3 w-32 h-32 object-cover rounded-full border-4 border-white/10 shadow-2xl pointer-events-none opacity-90"
             >
           </div>
@@ -221,16 +221,16 @@
           </div>
         </div>
 
-        <!-- Menu Feed -->
+        <!-- Menu Feed (2 FOOD ITEMS PER ROW - 2-COLUMN BOX GRID) -->
         <div class="px-4 pt-3 pb-4">
-          <div class="flex items-center justify-between mb-2">
-            <h3 class="text-xs font-black text-slate-900 uppercase tracking-wider" id="sectionHeading">A2B In-Store Menu</h3>
+          <div class="flex items-center justify-between mb-2.5">
+            <h3 class="text-xs font-black text-slate-900 uppercase tracking-wider" id="sectionHeading">A2B Menu</h3>
             <span class="text-[11px] text-slate-400 font-medium" id="itemCountDisplay">33 items</span>
           </div>
 
-          <!-- Items Container -->
-          <div id="menuItemsContainer" class="space-y-2.5">
-            <!-- Injected via JavaScript -->
+          <!-- 2-COLUMN GRID BOX CONTAINER -->
+          <div id="menuItemsContainer" class="grid grid-cols-2 gap-3">
+            <!-- Injected via JavaScript as 2-column box cards -->
           </div>
         </div>
 
@@ -547,7 +547,7 @@
                 <span class="text-xs font-black text-slate-900">#A2B-CH-7821</span>
                 <span class="text-[9px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">Delivered</span>
               </div>
-              <div class="text-[11px] text-slate-600 mt-1">1x Ghee Roast, 1x Filter Coffee</div>
+              <div class="text-[11px] text-slate-600 mt-1">1x Ghee Roast, 1x Coffee / Tea</div>
               <div class="text-[10px] text-slate-400 mt-0.5">Yesterday • Self Pickup • ₹130.00</div>
             </div>
             <button onclick="reorderLast()" class="bg-red-50 text-a2b-red border border-red-200 text-xs font-bold px-3 py-1.5 rounded-xl hover:bg-a2b-red hover:text-white transition">
@@ -723,6 +723,7 @@
   <script>
     // ==========================================
     // MENU CATALOG FROM USER MENU CARD PHOTO
+    // WITH AUTHENTIC, ACCURATE FOOD PHOTOS
     // ==========================================
     const A2B_CATALOG = [
       // --- BREAKFAST (சிற்றுண்டி) ---
@@ -732,7 +733,7 @@
         category: 'breakfast',
         price: 35,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Idli_Sambar.JPG/400px-Idli_Sambar.JPG'
       },
       {
         id: 'b-medhu-vada',
@@ -740,7 +741,7 @@
         category: 'breakfast',
         price: 25,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Medu_Vadas.JPG/400px-Medu_Vadas.JPG'
       },
       {
         id: 'b-curd-vada',
@@ -748,7 +749,7 @@
         category: 'breakfast',
         price: 40,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Dahi_bhalla_or_dahi_wada_or_dahi_bada.PNG/400px-Dahi_bhalla_or_dahi_wada_or_dahi_bada.PNG'
       },
       {
         id: 'b-sambar-vada',
@@ -756,7 +757,7 @@
         category: 'breakfast',
         price: 40,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Medu_Vadas.JPG/400px-Medu_Vadas.JPG'
       },
       {
         id: 'b-sambar-idly-2',
@@ -764,7 +765,7 @@
         category: 'breakfast',
         price: 50,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Idli_Sambar.JPG/400px-Idli_Sambar.JPG'
       },
       {
         id: 'b-rava-kesari',
@@ -772,7 +773,7 @@
         category: 'breakfast',
         price: 50,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/KEsari_baat.jpg/400px-KEsari_baat.jpg'
       },
       {
         id: 'b-rava-kichadi',
@@ -780,7 +781,7 @@
         category: 'breakfast',
         price: 50,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/A_photo_of_Upma.jpg/400px-A_photo_of_Upma.jpg'
       },
       {
         id: 'b-idyappam-kuruma',
@@ -788,7 +789,7 @@
         category: 'breakfast',
         price: 50,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Idiyappam_with_Egg_Masala_Curry.jpg/400px-Idiyappam_with_Egg_Masala_Curry.jpg'
       },
       {
         id: 'b-14-idly',
@@ -796,7 +797,7 @@
         category: 'breakfast',
         price: 60,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Idli_Sambar.JPG/400px-Idli_Sambar.JPG'
       },
       {
         id: 'b-ghee-pongal',
@@ -804,7 +805,7 @@
         category: 'breakfast',
         price: 60,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Ven_pongal_with_sambar_and_chutney.jpg/400px-Ven_pongal_with_sambar_and_chutney.jpg'
       },
       {
         id: 'b-poori-masala',
@@ -812,7 +813,7 @@
         category: 'breakfast',
         price: 60,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Fluffy_Poori_%28cropped%29.JPG/400px-Fluffy_Poori_%28cropped%29.JPG'
       },
 
       // --- COFFEE / TEA ---
@@ -822,7 +823,7 @@
         category: 'beverages',
         price: 30,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&auto=format&fit=crop&q=80'
       },
 
       // --- DOSA CORNER (தோசை வகைகள்) ---
@@ -832,7 +833,7 @@
         category: 'dosa',
         price: 60,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
         id: 'd-masala-dosa',
@@ -840,7 +841,7 @@
         category: 'dosa',
         price: 75,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Masala_Dosa_2023.jpg/400px-Masala_Dosa_2023.jpg'
       },
       {
         id: 'd-onion-dosa',
@@ -848,7 +849,7 @@
         category: 'dosa',
         price: 80,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
         id: 'd-rava-dosa',
@@ -856,7 +857,7 @@
         category: 'dosa',
         price: 80,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg/400px-Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg'
       },
       {
         id: 'd-kal-dosa-vadai-curry',
@@ -864,7 +865,7 @@
         category: 'dosa',
         price: 80,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
         id: 'd-ghee-small-onion-dosa',
@@ -872,7 +873,7 @@
         category: 'dosa',
         price: 85,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
         id: 'd-podi-masala-dosa',
@@ -880,7 +881,7 @@
         category: 'dosa',
         price: 85,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
         id: 'd-ghee-roast',
@@ -888,7 +889,7 @@
         category: 'dosa',
         price: 100,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg/400px-Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg'
       },
       {
         id: 'd-ghee-masala-dosa',
@@ -896,7 +897,7 @@
         category: 'dosa',
         price: 115,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Masala_Dosa_2023.jpg/400px-Masala_Dosa_2023.jpg'
       },
       {
         id: 'd-onion-rava-masala-dosa',
@@ -904,7 +905,7 @@
         category: 'dosa',
         price: 110,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg/400px-Dosa_at_Sri_Ganesha_Restauran%2C_Bangkok_%2844570742744%29.jpg'
       },
       {
         id: 'd-spl-dosa-day',
@@ -912,7 +913,7 @@
         category: 'dosa',
         price: 125,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
 
       // --- SIGNATURE SWEETS (10 ITEMS) ---
@@ -922,7 +923,7 @@
         category: 'sweets',
         price: 185,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Mysore_pak.jpg/400px-Mysore_pak.jpg'
       },
       {
         id: 's-kaju-katli',
@@ -930,7 +931,7 @@
         category: 'sweets',
         price: 260,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Kaju_katli_sweet.jpg/400px-Kaju_katli_sweet.jpg'
       },
       {
         id: 's-motichoor-laddu',
@@ -938,7 +939,7 @@
         category: 'sweets',
         price: 155,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Laddu_Sweet.JPG/400px-Laddu_Sweet.JPG'
       },
       {
         id: 's-wheat-halwa',
@@ -946,7 +947,7 @@
         category: 'sweets',
         price: 165,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Orient_sweets_%28special_halva%29_Samarkand%2C_Siyab.jpg/400px-Orient_sweets_%28special_halva%29_Samarkand%2C_Siyab.jpg'
       },
       {
         id: 's-badam-halwa',
@@ -954,7 +955,7 @@
         category: 'sweets',
         price: 140,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/KEsari_baat.jpg/400px-KEsari_baat.jpg'
       },
       {
         id: 's-ghee-jangri',
@@ -962,7 +963,7 @@
         category: 'sweets',
         price: 150,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Basavanagudi_Kadalekai_Parishe_%282025%29_Bangalore_%2886%29.jpg/400px-Basavanagudi_Kadalekai_Parishe_%282025%29_Bangalore_%2886%29.jpg'
       },
       {
         id: 's-malai-peda',
@@ -970,7 +971,7 @@
         category: 'sweets',
         price: 160,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Indian_Sweet_Dessert_Peda_in_a_white_bone_china_plate.jpg/400px-Indian_Sweet_Dessert_Peda_in_a_white_bone_china_plate.jpg'
       },
       {
         id: 's-dry-fruit-halwa',
@@ -978,7 +979,7 @@
         category: 'sweets',
         price: 240,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Orient_sweets_%28special_halva%29_Samarkand%2C_Siyab.jpg/400px-Orient_sweets_%28special_halva%29_Samarkand%2C_Siyab.jpg'
       },
       {
         id: 's-kaju-pista-roll',
@@ -986,7 +987,7 @@
         category: 'sweets',
         price: 275,
         bestseller: false,
-        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Kaju_katli_sweet.jpg/400px-Kaju_katli_sweet.jpg'
       },
       {
         id: 's-kesar-rasamalai',
@@ -994,7 +995,7 @@
         category: 'sweets',
         price: 80,
         bestseller: true,
-        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300&auto=format&fit=crop&q=80'
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Ras_Malai_2.JPG/400px-Ras_Malai_2.JPG'
       }
     ];
 
@@ -1021,10 +1022,10 @@
       tipAmount: 0,
       walletBalance: 450.00,
       loyaltyPoints: 280,
-      cart: [] // Empty cart initially! "Cart பார்க்க" bar only appears after adding items!
+      cart: [] // Empty cart initially! "View Cart" bar ONLY appears after adding food items!
     };
 
-    // Calculate Rider Delivery Fee based on km
+    // Calculate Rider Delivery Fee based on distance
     function calculateRiderDeliveryFee(distKm) {
       if (appState.fulfillment === 'pickup') return 0;
       const d = parseFloat(distKm);
@@ -1038,7 +1039,7 @@
     }
 
     // ==========================================
-    // RENDER MENU
+    // RENDER MENU (2 FOOD BOX CARDS PER ROW)
     // ==========================================
     function renderMenu() {
       const container = document.getElementById('menuItemsContainer');
@@ -1060,56 +1061,63 @@
 
       if (items.length === 0) {
         container.innerHTML = `
-          <div class="text-center py-10 text-slate-400">
+          <div class="col-span-2 text-center py-12 text-slate-400">
             <p class="text-xs font-bold">No dishes found matching "${appState.searchQuery}"</p>
           </div>
         `;
         return;
       }
 
-      // Ultra-clean card: Image + Name + Price + Order Button (No cooking description!)
+      // 2-Column Side-by-Side Box Grid: Image Top, Name & Price Center, Order Button
       container.innerHTML = items.map(item => {
         const cartItem = appState.cart.find(c => c.id === item.id);
         const qty = cartItem ? cartItem.qty : 0;
 
         return `
-          <div class="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs hover:shadow-card transition-all flex items-center justify-between gap-3">
-            <!-- Left: Food Image -->
-            <div class="relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-slate-100">
+          <div class="bg-white border border-slate-200/90 rounded-2xl p-2.5 shadow-xs hover:shadow-card transition-all flex flex-col justify-between">
+            <!-- Top: Food Image with Veg Badge & Bestseller Tag -->
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-slate-100">
               <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
+              
+              <!-- Veg Indicator Badge -->
+              <div class="absolute top-1.5 left-1.5 bg-white/95 backdrop-blur-xs p-1 rounded-md shadow-xs">
+                <div class="veg-box"><div class="veg-dot"></div></div>
+              </div>
+              
               ${item.bestseller ? `
-                <span class="absolute top-1 left-1 bg-amber-500 text-slate-950 font-black text-[8px] px-1.5 py-0.2 rounded uppercase">
+                <span class="absolute top-1.5 right-1.5 bg-amber-500 text-slate-950 font-black text-[8px] px-1.5 py-0.5 rounded shadow-xs uppercase tracking-wide">
                   Best
                 </span>
               ` : ''}
             </div>
 
-            <!-- Center: Food Name & Price (NO COOKING DESCRIPTION) -->
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-1.5">
-                <div class="veg-box flex-shrink-0"><div class="veg-dot"></div></div>
-                <h4 class="text-xs font-black text-slate-900 leading-snug truncate">${item.name}</h4>
+            <!-- Middle: Name & Store Price (NO COOKING DESCRIPTION) -->
+            <div class="mt-2 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="text-xs font-black text-slate-900 leading-tight line-clamp-2" title="${item.name}">${item.name}</h4>
               </div>
-              <div class="flex items-center gap-2 mt-1.5">
-                <span class="text-sm font-black text-slate-900">₹${item.price}</span>
-                <span class="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">Store Price</span>
-              </div>
-            </div>
-
-            <!-- Right: Order Actions (+ ADD or - QTY +) -->
-            <div class="flex-shrink-0">
-              ${qty === 0 ? `
-                <button onclick="addToCart('${item.id}')" class="bg-red-50 hover:bg-a2b-red hover:text-white text-a2b-red font-black text-xs px-3.5 py-2 rounded-xl border border-red-200 hover:border-a2b-red transition shadow-xs flex items-center gap-1">
-                  <span>ADD</span>
-                  <span class="text-xs font-bold">+</span>
-                </button>
-              ` : `
-                <div class="flex items-center bg-a2b-red text-white rounded-xl overflow-hidden shadow-xs">
-                  <button onclick="updateQty('${item.id}', -1)" class="px-2.5 py-1.5 hover:bg-red-950 font-bold text-xs">-</button>
-                  <span class="px-2 font-black text-xs">${qty}</span>
-                  <button onclick="updateQty('${item.id}', 1)" class="px-2.5 py-1.5 hover:bg-red-950 font-bold text-xs">+</button>
+              
+              <div class="mt-2.5 flex items-center justify-between">
+                <div>
+                  <span class="text-sm font-black text-slate-900">₹${item.price}</span>
                 </div>
-              `}
+                
+                <!-- Action: ADD or - QTY + Stepper -->
+                <div>
+                  ${qty === 0 ? `
+                    <button onclick="addToCart('${item.id}')" class="bg-red-50 hover:bg-a2b-red hover:text-white text-a2b-red font-black text-xs px-3 py-1.5 rounded-xl border border-red-200 hover:border-a2b-red transition shadow-xs flex items-center gap-0.5">
+                      <span>ADD</span>
+                      <span class="text-xs font-bold">+</span>
+                    </button>
+                  ` : `
+                    <div class="flex items-center bg-a2b-red text-white rounded-xl overflow-hidden shadow-xs text-xs">
+                      <button onclick="updateQty('${item.id}', -1)" class="px-2 py-1 hover:bg-red-950 font-bold">-</button>
+                      <span class="px-1.5 font-black">${qty}</span>
+                      <button onclick="updateQty('${item.id}', 1)" class="px-2 py-1 hover:bg-red-950 font-bold">+</button>
+                    </div>
+                  `}
+                </div>
+              </div>
             </div>
           </div>
         `;
