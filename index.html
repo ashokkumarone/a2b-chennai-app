@@ -1,43 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" class="min-h-full bg-white md:bg-neutral-900">
+<html lang="ta" class="min-h-full bg-slate-100">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>A2B | Adyar Ananda Bhavan - Pure Vegetarian</title>
+  <title>A2B - Adyar Ananda Bhavan | Chennai Pure Veg Ordering</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Google Fonts: Plus Jakarta Sans & Mukta Malar -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mukta+Malar:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Mukta+Malar:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              red: '#8B0000',
-              redHover: '#720000',
-              redLight: '#FEF2F2',
-              saffron: '#D97706',
-              gold: '#F59E0B',
+            a2b: {
+              red: '#990000',
+              redDark: '#7A0000',
+              redLight: '#FFF1F1',
+              gold: '#D97706',
               goldLight: '#FEF3C7',
-              veg: '#15803D',
-              vegLight: '#DCFCE7',
-              dark: '#0F172A',
-              card: '#FFFFFF',
-              surface: '#F8FAFC'
+              yellow: '#F59E0B',
+              yellowLight: '#FFFBEB',
+              cream: '#FAFAF7',
+              vegGreen: '#16A34A',
+              vegGreenLight: '#DCFCE7'
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            tamil: ['"Mukta Malar"', '"Plus Jakarta Sans"', 'sans-serif']
+            sans: ['"Plus Jakarta Sans"', '"Mukta Malar"', 'sans-serif'],
+            tamil: ['"Mukta Malar"', 'sans-serif']
           },
           boxShadow: {
-            'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03)',
-            'card': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
-            'float': '0 20px 35px -5px rgba(139, 0, 0, 0.25)',
-            'sheet': '0 -10px 40px rgba(0, 0, 0, 0.12)'
+            'card': '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
+            'float': '0 10px 30px -5px rgba(153, 0, 0, 0.35)',
+            'sheet': '0 -10px 40px rgba(0, 0, 0, 0.15)'
           }
         }
       }
@@ -48,10 +46,10 @@
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     
-    .veg-symbol {
+    .veg-box {
       width: 15px;
       height: 15px;
-      border: 1.5px solid #15803D;
+      border: 1.5px solid #16A34A;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -59,33 +57,33 @@
       border-radius: 3px;
       flex-shrink: 0;
     }
-    .veg-symbol .dot {
+    .veg-box .veg-dot {
       width: 6.5px;
       height: 6.5px;
-      background-color: #15803D;
+      background-color: #16A34A;
       border-radius: 50%;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes pulse-gentle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
     }
-    .animate-fade-in { animation: fadeIn 0.25s ease-out forwards; }
+    .pulse-btn { animation: pulse-gentle 2.2s infinite; }
 
-    /* Custom radio styling */
-    input[type="radio"]:checked + div {
-      border-color: #8B0000;
-      background-color: #FEF2F2;
+    @keyframes slideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
+    .animate-slide-up { animation: slideUp 0.25s ease-out forwards; }
   </style>
 </head>
-<body class="min-h-full font-sans antialiased text-slate-800 bg-white md:bg-neutral-900 flex justify-center selection:bg-brand-redLight selection:text-brand-red">
+<body class="min-h-full font-sans antialiased text-slate-800 bg-slate-100 md:bg-neutral-900 flex justify-center selection:bg-red-100 selection:text-a2b-red">
 
-  <!-- PHONE CONTAINER WRAPPER (Full screen on mobile, iPhone frame on desktop) -->
+  <!-- MOBILE PHONE FRAME CONTAINER -->
   <div class="w-full max-w-md bg-white min-h-screen min-h-[100dvh] flex flex-col relative overflow-x-hidden md:my-6 md:rounded-[40px] md:min-h-[880px] md:max-h-[920px] md:shadow-2xl md:border-[8px] md:border-neutral-800">
 
-    <!-- Top Native Status Bar (Hidden on actual phones, only shown on desktop preview) -->
-    <div class="hidden md:flex sticky top-0 bg-white/95 backdrop-blur-md pt-2 px-6 pb-1 justify-between items-center text-xs font-semibold text-slate-800 z-50 select-none">
+    <!-- DESKTOP STATUS BAR (Hidden on Mobile phones) -->
+    <div class="hidden md:flex sticky top-0 bg-white/95 backdrop-blur-md pt-2 px-6 pb-1 justify-between items-center text-xs font-semibold text-slate-800 z-50 select-none border-b border-slate-100">
       <span id="statusBarTime">9:41</span>
       <div class="flex items-center space-x-1.5">
         <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.59 10.6 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
@@ -96,264 +94,244 @@
       </div>
     </div>
 
-    <!-- MAIN HEADER: Location & Search bar -->
-    <header class="bg-white px-5 pt-1 pb-3 border-b border-slate-100 z-40 transition-all">
-      <div class="flex items-center justify-between gap-3">
-        <!-- Location Drawer Opener -->
-        <button onclick="openBranchDrawer()" class="flex items-center gap-2 text-left flex-1 min-w-0 group">
-          <div class="w-9 h-9 rounded-full bg-brand-redLight flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition">
-            <svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-          </div>
-          <div class="min-w-0 flex-1">
+    <!-- MAIN APP HEADER -->
+    <header class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-100 px-4 pt-2.5 pb-2.5 z-40 transition-shadow">
+      <div class="flex items-center justify-between gap-2.5">
+        
+        <!-- Logo & Pure Veg Badge -->
+        <div class="flex items-center gap-1.5">
+          <div class="flex flex-col">
             <div class="flex items-center gap-1.5">
-              <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400" id="currentAddressType">Deliver to Home</span>
-              <span class="text-[9px] bg-emerald-100 text-emerald-800 font-extrabold px-1.5 py-0.2 rounded-full">Chennai</span>
-              <svg class="w-3 h-3 text-slate-400 group-hover:translate-y-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              <span class="text-2xl font-black tracking-tight text-a2b-red leading-none">A2B</span>
+              <div class="veg-box shadow-2xs" title="100% Pure Vegetarian">
+                <div class="veg-dot"></div>
+              </div>
             </div>
-            <div class="text-xs font-extrabold text-slate-900 truncate" id="selectedBranchHeader">
-              Adyar Flagship (L.B. Road) • 1.4 km
-            </div>
+            <span class="text-[9px] font-extrabold text-slate-500 tracking-wider uppercase mt-0.5">Chennai Flagship</span>
           </div>
+        </div>
+
+        <!-- Branch / Location Selector Button -->
+        <button onclick="openBranchModal()" class="flex-1 max-w-[175px] bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-2xl px-2.5 py-1 text-left transition flex items-center justify-between shadow-2xs">
+          <div class="truncate">
+            <div class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase">
+              <span class="text-a2b-red">📍</span>
+              <span id="headerCityLabel">Adyar, Chennai</span>
+            </div>
+            <div class="text-[11px] font-extrabold text-slate-900 truncate" id="headerBranchName">Adyar Flagship (L.B. Rd)</div>
+          </div>
+          <svg class="w-3.5 h-3.5 text-slate-400 flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
         </button>
 
-        <!-- Pure Veg Emblem & Profile Quick Link -->
-        <div class="flex items-center gap-2">
-          <div class="flex items-center gap-1 bg-emerald-50 border border-emerald-200/80 px-2 py-1 rounded-full" title="Strictly 100% Pure Vegetarian">
-            <div class="veg-symbol"><div class="dot"></div></div>
-            <span class="text-[10px] font-bold text-emerald-800">Pure Veg</span>
+        <!-- A2B Wallet & Points Quick Button -->
+        <button onclick="switchTab('profile')" class="flex items-center gap-1 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 rounded-2xl px-2.5 py-1 hover:border-amber-400 transition shadow-2xs">
+          <div class="flex flex-col items-end">
+            <div class="flex items-center gap-1">
+              <span class="text-[9px] font-black text-amber-900 uppercase">Pay</span>
+              <span class="text-xs font-black text-a2b-red" id="headerWalletBal">₹450</span>
+            </div>
+            <div class="text-[9px] text-amber-700 font-bold" id="headerPointsLabel">⭐ 280 Pts</div>
           </div>
-
-          <button onclick="switchTab('profile')" class="w-9 h-9 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-200 transition">
-            <span class="text-xs font-bold">SR</span>
-          </button>
-        </div>
+        </button>
       </div>
 
-      <!-- Search Input -->
-      <div class="mt-2.5 relative">
-        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Zero-Markup Transparent Strip -->
+      <div class="mt-2 bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200/80 rounded-xl px-2.5 py-1.5 flex items-center justify-between">
+        <div class="flex items-center gap-1.5">
+          <span class="bg-emerald-600 text-white text-[9px] font-black px-1.5 py-0.2 rounded uppercase">Zero-Markup</span>
+          <span class="text-[11px] font-bold text-emerald-950">நேரடி கடை விலை • Swiggy கூடுதல் கட்டணம் இல்லை!</span>
+        </div>
+        <span class="text-[10px] font-black text-emerald-700 bg-white px-1.5 py-0.2 rounded border border-emerald-200">100% Pure Veg</span>
+      </div>
+
+      <!-- Live Search Bar -->
+      <div class="mt-2 relative">
+        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
         <input 
           type="text" 
           id="globalSearchInput"
           oninput="handleSearch(this.value)"
-          placeholder="Search Ghee Roast, Mysore Pak, Filter Coffee..." 
-          class="w-full bg-slate-50 border border-slate-200/90 rounded-2xl pl-10 pr-9 py-2 text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red transition"
+          placeholder="உணவு அல்லது ஸ்வீட் தேடவும் (Dosa, Mysore Pak, Pongal)..." 
+          class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-8 py-1.5 text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-a2b-red/20 focus:border-a2b-red transition"
         >
         <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-xs font-bold">✕</button>
       </div>
     </header>
 
-    <!-- SCROLLABLE SCREEN CONTENTS -->
+    <!-- MAIN SCROLLABLE APP BODY -->
     <main class="flex-1 overflow-y-auto no-scrollbar pb-32">
 
-      <!-- ========================================== -->
-      <!-- TAB 1: HOME SCREEN                         -->
-      <!-- ========================================== -->
-      <div id="screen-home" class="block animate-fade-in">
-        
-        <!-- Curated Hero Offer Banner -->
-        <div class="px-5 pt-3.5">
-          <div class="relative bg-gradient-to-br from-brand-red via-[#9b0000] to-[#600000] rounded-3xl p-5 text-white overflow-hidden shadow-card">
-            <!-- Decorative circle -->
-            <div class="absolute -right-6 -bottom-10 w-44 h-44 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
+      <!-- ==================== TAB 1: HOME & ORDERING ==================== -->
+      <section id="tab-home" class="block">
 
+        <!-- Festival & Signature Hero Banner -->
+        <div class="px-4 pt-3">
+          <div class="relative bg-gradient-to-r from-red-950 via-a2b-red to-red-900 rounded-2xl p-4 text-white shadow-card overflow-hidden">
+            <div class="absolute -right-6 -bottom-6 w-36 h-36 bg-amber-400/20 rounded-full blur-xl pointer-events-none"></div>
+            
             <div class="relative z-10 max-w-[240px]">
-              <span class="inline-block bg-brand-gold text-slate-950 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full mb-2">
-                A2B Authentic Chennai
-              </span>
-              <h2 class="text-lg font-black leading-tight text-white tracking-tight">
-                Fresh Ghee Tiffin & Signature Sweets
+              <div class="inline-flex items-center gap-1 bg-amber-400 text-red-950 px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider mb-1">
+                <span>🪔 A2B சென்னை சிக்னேச்சர்</span>
+              </div>
+              <h2 class="text-base font-black leading-tight text-white mt-1">
+                அசல் நெய் ரோஸ்ட் & பிரத்யேக மைசூர்பாக்
               </h2>
-              <p class="text-xs text-red-100 mt-1 font-medium leading-relaxed">
-                100% In-store original pricing. Direct delivery with zero platform commission.
+              <p class="text-[11px] text-red-100 mt-1 leading-snug">
+                கடையில் என்ன விலையோ அதே அசல் விலையில் உடனே ஆர்டர் செய்யுங்கள்!
               </p>
               
-              <div class="mt-3.5 flex items-center gap-2">
-                <button onclick="quickFilterCategory('sweets')" class="bg-white text-brand-red hover:bg-red-50 text-xs font-extrabold px-3.5 py-2 rounded-xl shadow-sm transition">
-                  Order Sweets (10)
+              <div class="mt-3 flex items-center gap-2">
+                <button onclick="filterCategory('sweets')" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs px-3.5 py-1.5 rounded-xl shadow-md transition flex items-center gap-1">
+                  <span>ஸ்வீட்ஸ் (10)</span>
+                  <span>→</span>
                 </button>
-                <button onclick="quickFilterCategory('food')" class="bg-black/20 hover:bg-black/30 text-white text-xs font-bold px-3 py-2 rounded-xl border border-white/20 transition">
-                  Food & Meals (15)
+                <button onclick="filterCategory('food')" class="bg-white/20 hover:bg-white/30 text-white font-bold text-xs px-3 py-1.5 rounded-xl border border-white/20 transition">
+                  உணவுகள் (15)
                 </button>
               </div>
             </div>
 
             <img 
               src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80" 
-              alt="A2B Special Dosa"
-              class="absolute -right-7 top-4 w-32 h-32 md:w-36 md:h-36 object-cover rounded-full border-4 border-white/10 shadow-2xl pointer-events-none opacity-80 md:opacity-100"
+              alt="A2B Dosa"
+              class="absolute -right-6 top-3 w-32 h-32 object-cover rounded-full border-4 border-white/10 shadow-2xl pointer-events-none opacity-90"
             >
           </div>
         </div>
 
-        <!-- Time-Based Tiffin Recommendation Strip -->
-        <div class="px-5 pt-3">
-          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3 flex items-center justify-between">
+        <!-- Dynamic Tiffin / Meals Time Strip -->
+        <div class="px-4 pt-3">
+          <div class="bg-amber-50 border border-amber-200/80 rounded-xl p-2.5 flex items-center justify-between">
             <div class="flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center text-sm font-bold">
-                ☕
-              </div>
+              <span class="text-xl">🥞</span>
               <div>
                 <div class="flex items-center gap-1.5">
-                  <span class="text-xs font-black text-slate-900" id="timeGreetingText">Morning Tiffin Hour</span>
-                  <span class="text-[9px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.2 rounded">Fresh Batter</span>
+                  <span class="text-xs font-black text-amber-950">சூடான நெய் டிபன் & சாப்பாடு தயார்!</span>
+                  <span class="bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-1.5 py-0.2 rounded">Fresh Batter</span>
                 </div>
-                <p class="text-[10px] text-slate-500 font-medium">Crispy dosas, hot sambar & degree filter coffee</p>
+                <p class="text-[10px] text-amber-800">மொறுமொறு நெய் ரோஸ்ட், மினி இட்லி மற்றும் ஃபில்டர் காபி</p>
               </div>
             </div>
-            <button onclick="quickFilterCategory('food')" class="text-xs font-extrabold text-brand-red hover:text-brand-redHover">
+            <button onclick="filterCategory('food')" class="text-xs font-black text-a2b-red hover:underline">
               View →
             </button>
           </div>
         </div>
 
-        <!-- Authentic A2B Menu Category Carousel -->
-        <div class="pt-4">
-          <div class="px-5 flex items-center justify-between mb-2.5">
-            <h3 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">A2B Signature Categories</h3>
-            <span class="text-[11px] text-brand-red font-bold cursor-pointer" onclick="switchTab('menu')">All Menu →</span>
-          </div>
-
-          <!-- Category Chips -->
-          <div class="px-5 flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
-            <button onclick="setCategoryFilter('all')" id="cat-pill-all" class="category-chip active flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-brand-red text-white shadow-sm transition">
-              All Items (26)
+        <!-- Filter Category Pills (All, 15 Foods, 10 Sweets, Coffee) -->
+        <div class="px-4 pt-3.5">
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+            <button onclick="filterCategory('all')" id="pill-all" class="category-pill active flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black bg-a2b-red text-white shadow-xs">
+              அனைத்தும் / All (26)
             </button>
-            <button onclick="setCategoryFilter('food')" id="cat-pill-food" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              🥞 உணவுகள் / Food (15)
+            <button onclick="filterCategory('food')" id="pill-food" class="category-pill flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200">
+              🥞 உணவுகள் & சாப்பாடு (15)
             </button>
-            <button onclick="setCategoryFilter('sweets')" id="cat-pill-sweets" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              🍯 ஸ்வீட்ஸ் / Sweets (10)
+            <button onclick="filterCategory('sweets')" id="pill-sweets" class="category-pill flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200">
+              🍯 நெய் ஸ்வீட்ஸ் (10)
             </button>
-            <button onclick="setCategoryFilter('beverages')" id="cat-pill-beverages" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              ☕ டிகிரி காபி / Coffee (1)
+            <button onclick="filterCategory('beverages')" id="pill-beverages" class="category-pill flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200">
+              ☕ டிகிரி ஃபில்டர் காபி (1)
             </button>
           </div>
         </div>
 
-        <!-- Food Items Grid (Filtered) -->
-        <div class="px-5 pt-3">
+        <!-- Menu Feed -->
+        <div class="px-4 pt-3 pb-4">
           <div class="flex items-center justify-between mb-2">
-            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider" id="menuSubheaderTitle">Popular at Adyar Branch</h4>
-            <span class="text-[11px] font-semibold text-slate-400" id="itemCountLabel">Showing 18 dishes</span>
+            <h3 class="text-xs font-black text-slate-900 uppercase tracking-wider" id="sectionHeading">A2B அசல் மெனு & நேரடி கடை விலை</h3>
+            <span class="text-[11px] text-slate-400 font-medium" id="itemCountDisplay">26 உணவுகள்</span>
           </div>
 
-          <!-- Product Feed Container -->
-          <div id="productFeed" class="space-y-3">
-            <!-- Dynamically Rendered by JS -->
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ========================================== -->
-      <!-- TAB 2: FULL MENU BROWSER SCREEN            -->
-      <!-- ========================================== -->
-      <div id="screen-menu" class="hidden animate-fade-in px-5 py-4">
-        <div class="flex items-center justify-between mb-3">
-          <div>
-            <h2 class="text-base font-black text-slate-900">A2B Authentic Menu</h2>
-            <p class="text-xs text-slate-500">Prepared fresh daily with pure cow ghee & ground spices</p>
+          <!-- Items Container -->
+          <div id="menuItemsContainer" class="space-y-3">
+            <!-- Dynamic JS injected items -->
           </div>
         </div>
 
-        <!-- Filter bar -->
-        <div class="flex items-center gap-2 mb-4 overflow-x-auto no-scrollbar">
-          <button onclick="filterMenuByType('all')" class="menu-type-btn active bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-xl">All Items</button>
-          <button onclick="filterMenuByType('bestseller')" class="menu-type-btn bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-xl hover:bg-slate-200">⭐ Bestsellers</button>
-          <button onclick="filterMenuByType('jain')" class="menu-type-btn bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-xl hover:bg-slate-200">🌱 Jain Friendly</button>
-        </div>
+      </section>
 
-        <!-- Grouped Menu Accordions -->
-        <div id="fullMenuAccordionContainer" class="space-y-4">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-
-      <!-- ========================================== -->
-      <!-- TAB 3: CART & DISTANCE-BASED CHECKOUT      -->
-      <!-- ========================================== -->
-      <div id="screen-cart" class="hidden animate-fade-in px-5 py-4">
+      <!-- ==================== TAB 2: CART & REAL CHECKOUT ==================== -->
+      <section id="tab-cart" class="hidden px-4 py-4">
         
-        <!-- Screen Header -->
         <div class="flex items-center justify-between mb-3">
-          <h2 class="text-base font-black text-slate-900">Your Order</h2>
-          <button onclick="clearCart()" class="text-xs font-bold text-slate-400 hover:text-brand-red">Clear All</button>
+          <h3 class="text-base font-black text-slate-900">உங்களின் உணவுப் பை (Your Cart)</h3>
+          <button onclick="clearCart()" class="text-xs font-bold text-slate-400 hover:text-a2b-red">Clear Cart</button>
         </div>
 
-        <!-- Empty Cart -->
-        <div id="cartEmptyView" class="hidden text-center py-16">
-          <div class="w-16 h-16 rounded-3xl bg-slate-100 text-slate-400 flex items-center justify-center text-2xl mx-auto mb-3">
+        <!-- Empty Cart State -->
+        <div id="cartEmptyState" class="hidden text-center py-16">
+          <div class="w-16 h-16 rounded-3xl bg-red-50 text-a2b-red flex items-center justify-center text-3xl mx-auto mb-3">
             🛒
           </div>
-          <h3 class="text-sm font-extrabold text-slate-900">Your cart is empty</h3>
-          <p class="text-xs text-slate-500 mt-1 max-w-[200px] mx-auto">Add pure ghee dosas, sweets, and degree filter coffee to start!</p>
-          <button onclick="switchTab('home')" class="mt-4 bg-brand-red text-white text-xs font-bold px-5 py-2.5 rounded-2xl shadow-sm">
-            Explore A2B Menu
+          <h4 class="text-sm font-black text-slate-800">உங்கள் கார்ட் காலியாக உள்ளது</h4>
+          <p class="text-xs text-slate-500 mt-1 max-w-[220px] mx-auto">சூடான நெய் ரோஸ்ட், மைசூர்பாக், டிகிரி காபியைச் சேர்த்து உடனடியாக ஆர்டர் செய்யுங்கள்!</p>
+          <button onclick="switchTab('home')" class="mt-4 bg-a2b-red text-white text-xs font-black px-5 py-2.5 rounded-xl shadow-md">
+            உணவுகளைப் பார்க்கவும்
           </button>
         </div>
 
-        <!-- Filled Cart View -->
-        <div id="cartFilledView" class="space-y-4">
-
-          <!-- Delivery Mode Selector (Delivery vs Store Pickup) -->
-          <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-3">
-            <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 block mb-2">Choose Fulfillment:</span>
+        <!-- Populated Cart Content -->
+        <div id="cartFilledState" class="space-y-4">
+          
+          <!-- Fulfillment Mode Selection (Self Pickup vs Doorstep Delivery) -->
+          <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-3">
+            <span class="text-xs font-black text-slate-900 block mb-2">உணவு பெறும் வழிமுறை (Fulfillment Method):</span>
             
             <div class="grid grid-cols-2 gap-2">
-              <!-- Mode: Doorstep Delivery -->
-              <label class="cursor-pointer relative flex flex-col p-2.5 rounded-xl border-2 transition bg-white" id="optDeliveryCard">
-                <input type="radio" name="orderType" value="delivery" checked onchange="setOrderType('delivery')" class="hidden">
+              
+              <!-- Option 1: Self Pickup -->
+              <label class="cursor-pointer relative flex flex-col p-2.5 rounded-xl border-2 transition bg-white shadow-xs" id="labelOptionPickup">
+                <input type="radio" name="fulfillment" value="pickup" checked onchange="toggleFulfillment('pickup')" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs font-black text-slate-900">🛵 Delivery</span>
-                  <span class="text-[9px] font-bold text-slate-500">To Doorstep</span>
+                  <span class="text-xs font-black text-slate-900">🛍️ Self Pickup</span>
+                  <span class="text-[9px] font-black bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded">₹0 கட்டணம்</span>
                 </div>
-                <div class="text-[10px] text-slate-500" id="deliveryEstTimeLabel">Est. 25-30 mins</div>
-                <div class="text-[10px] font-bold text-brand-red mt-1" id="deliveryPartnerBadge">Fair Rider Payout</div>
+                <p class="text-[10px] text-slate-500 leading-tight">
+                  கடையில் கவுண்ட்டரில் தயார். <strong>வரிசையில் நிற்கத் தேவையில்லை!</strong>
+                </p>
+                <div class="text-[9px] font-black text-a2b-red mt-1.5">
+                  ⏱️ தயார் நேரம்: 12 நிமிடங்கள்
+                </div>
               </label>
 
-              <!-- Mode: Self Pickup -->
-              <label class="cursor-pointer relative flex flex-col p-2.5 rounded-xl border-2 border-slate-200 transition bg-white" id="optPickupCard">
-                <input type="radio" name="orderType" value="pickup" onchange="setOrderType('pickup')" class="hidden">
+              <!-- Option 2: Doorstep Delivery -->
+              <label class="cursor-pointer relative flex flex-col p-2.5 rounded-xl border-2 border-slate-200 transition bg-white" id="labelOptionDelivery">
+                <input type="radio" name="fulfillment" value="delivery" onchange="toggleFulfillment('delivery')" class="hidden">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs font-black text-slate-900">🛍️ Store Pickup</span>
-                  <span class="text-[9px] font-black text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded">₹0 Fee</span>
+                  <span class="text-xs font-black text-slate-900">🛵 Doorstep Delivery</span>
+                  <span class="text-[9px] font-bold text-slate-600 bg-slate-100 px-1 py-0.2 rounded">தூரக் கட்டணம்</span>
                 </div>
-                <div class="text-[10px] text-slate-500">Ready in 12 mins</div>
-                <div class="text-[10px] font-bold text-slate-700 mt-1">Skip Counter Queue</div>
+                <p class="text-[10px] text-slate-500 leading-tight">
+                  டெலிவரி பார்ட்னர் மூலம் உங்கள் வீட்டு வாசலுக்கே வரும்.
+                </p>
+                <div class="text-[9px] font-bold text-emerald-700 mt-1.5">
+                  🚀 20-25 நிமிடங்கள்
+                </div>
               </label>
             </div>
           </div>
 
-          <!-- Dynamic Distance & Address Details Block (Shown in Delivery mode) -->
-          <div id="deliveryDistanceBlock" class="bg-white border border-slate-200 rounded-2xl p-3.5 shadow-subtle space-y-3">
+          <!-- Dynamic Distance Engine for Delivery -->
+          <div id="deliveryDistanceSection" class="bg-white border border-slate-200 rounded-2xl p-3.5 shadow-xs space-y-3">
             <div class="flex items-start justify-between">
-              <div class="flex items-start gap-2.5">
-                <div class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-xs mt-0.5">
-                  📍
-                </div>
+              <div class="flex items-start gap-2">
+                <span class="text-base mt-0.5">📍</span>
                 <div>
-                  <div class="text-xs font-black text-slate-900 flex items-center gap-1.5">
-                    <span id="cartAddressTitle">Home - Gandhi Nagar, Adyar</span>
-                    <button onclick="openBranchDrawer()" class="text-[10px] text-brand-red font-bold underline">Change</button>
-                  </div>
-                  <p class="text-[11px] text-slate-500 mt-0.5" id="cartAddressFull">4th Main Road, Gandhi Nagar, Adyar, Chennai - 600020</p>
+                  <div class="text-xs font-black text-slate-900" id="cartAddressHeading">Deliver to Home (Adyar)</div>
+                  <p class="text-[10px] text-slate-500 mt-0.5" id="cartAddressSub">4th Main Road, Gandhi Nagar, Adyar, Chennai - 600020</p>
                 </div>
               </div>
+              <button onclick="openBranchModal()" class="text-[11px] font-black text-a2b-red underline">Change</button>
             </div>
 
-            <!-- Distance Slider Simulation (So the user can test different delivery distances in Chennai) -->
-            <div class="pt-2.5 border-t border-slate-100">
-              <div class="flex items-center justify-between text-xs font-bold text-slate-700 mb-1">
-                <span class="flex items-center gap-1 text-[11px]">
-                  <span>📏 Distance from A2B Branch:</span>
-                </span>
-                <span class="text-brand-red font-black" id="distanceNumberDisplay">1.8 km</span>
+            <!-- Distance calculation interactive slider -->
+            <div class="pt-2 border-t border-slate-100">
+              <div class="flex justify-between items-center text-xs font-bold text-slate-800 mb-1">
+                <span>கிளையிலிருந்து உங்கள் தூரம் (Distance):</span>
+                <span class="text-a2b-red font-black" id="distanceLabelDisplay">1.4 km</span>
               </div>
               
               <input 
@@ -362,108 +340,113 @@
                 min="0.5" 
                 max="12.0" 
                 step="0.1" 
-                value="1.8"
-                oninput="updateDeliveryDistance(this.value)"
-                class="w-full accent-brand-red h-1.5 bg-slate-200 rounded-lg cursor-pointer"
+                value="1.4"
+                oninput="handleDistanceChange(this.value)"
+                class="w-full accent-a2b-red h-1.5 bg-slate-200 rounded-lg cursor-pointer"
               >
               
-              <div class="flex justify-between text-[9px] text-slate-400 font-semibold mt-1">
-                <span>Near (0.5 km)</span>
-                <span>Mid (5 km)</span>
-                <span>Far (12 km)</span>
-              </div>
-
-              <!-- Rider payout explanation note -->
-              <div class="mt-2 bg-emerald-50/70 border border-emerald-200/60 rounded-xl p-2 flex items-center justify-between text-[11px] text-emerald-950 font-medium">
+              <div class="mt-2 bg-emerald-50 border border-emerald-200 rounded-xl p-2 flex items-center justify-between text-[11px] text-emerald-950">
                 <div class="flex items-center gap-1.5">
-                  <span class="text-sm">🛵</span>
-                  <span>100% of delivery fee goes directly to your delivery partner.</span>
+                  <span>🛵</span>
+                  <span>100% டெலிவரி கட்டணமும் ரைடருக்கே செல்கிறது:</span>
                 </div>
-                <span class="font-extrabold text-emerald-800" id="riderPayoutPreview">₹25.00</span>
+                <span class="font-black text-emerald-800" id="riderFeePreview">₹25.00</span>
               </div>
             </div>
           </div>
 
           <!-- Cart Items List -->
-          <div class="bg-white border border-slate-200 rounded-2xl p-3.5 shadow-subtle">
-            <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block mb-2">Items in Cart:</span>
-            <div id="cartItemList" class="space-y-3">
-              <!-- Dynamically populated items -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-3.5 shadow-xs">
+            <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block mb-2">உணவு விவரம் (Items):</span>
+            <div id="cartItemsList" class="space-y-3">
+              <!-- Dynamically populated -->
             </div>
           </div>
 
-          <!-- Delivery Partner Tip Row -->
-          <div id="tipSection" class="bg-white border border-slate-200 rounded-2xl p-3 shadow-subtle">
+          <!-- Rider Tip -->
+          <div id="tipSection" class="bg-white border border-slate-200 rounded-2xl p-3 shadow-xs">
             <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-bold text-slate-800">Support your delivery partner with a tip:</span>
-              <span class="text-[10px] text-slate-400 font-semibold" id="selectedTipLabel">₹0</span>
+              <span class="text-xs font-bold text-slate-800">டெலிவரி பார்ட்னருக்கு சிறு அன்புத்தொகை (Tip):</span>
+              <span class="text-[10px] text-slate-500 font-bold" id="selectedTipDisplay">₹0</span>
             </div>
             <div class="grid grid-cols-4 gap-2 text-xs">
-              <button onclick="setTip(0)" id="tip-0" class="tip-chip active py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 bg-slate-100">None</button>
-              <button onclick="setTip(10)" id="tip-10" class="tip-chip py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-slate-300">₹10</button>
-              <button onclick="setTip(20)" id="tip-20" class="tip-chip py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-slate-300">₹20</button>
-              <button onclick="setTip(30)" id="tip-30" class="tip-chip py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-slate-300">₹30</button>
+              <button onclick="applyTip(0)" id="tip-btn-0" class="tip-btn active py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 bg-slate-100">₹0</button>
+              <button onclick="applyTip(10)" id="tip-btn-10" class="tip-btn py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-slate-300">+₹10</button>
+              <button onclick="applyTip(20)" id="tip-btn-20" class="tip-btn py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-slate-300">+₹20</button>
+              <button onclick="applyTip(30)" id="tip-btn-30" class="tip-btn py-1.5 rounded-xl border border-slate-200 font-bold text-slate-700 hover:border-slate-300">+₹30</button>
             </div>
           </div>
 
-          <!-- Transparent Bill Breakdown -->
-          <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-subtle space-y-2 text-xs text-slate-600">
-            <h4 class="font-black text-slate-900 text-xs uppercase tracking-wider mb-2">Bill Summary</h4>
-            
-            <div class="flex justify-between">
-              <span>Item Total (In-Store Menu Price)</span>
-              <span class="font-bold text-slate-900" id="billSubtotal">₹0</span>
-            </div>
+          <!-- Zero-Markup Transparent Bill Breakdown -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs">
+            <h4 class="text-xs font-black text-slate-900 uppercase tracking-wider mb-2.5 flex items-center justify-between">
+              <span>பில் விவரம் (Transparent Bill)</span>
+              <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">கடை விலையே தான்!</span>
+            </h4>
 
-            <div class="flex justify-between items-center" id="billDeliveryFeeRow">
-              <div class="flex items-center gap-1">
-                <span>Delivery Partner Fee (<span id="billDistanceText">1.8 km</span>)</span>
-                <span class="text-[10px] text-slate-400" title="Calculated based on actual road distance">ℹ️</span>
+            <div class="space-y-1.5 text-xs text-slate-600">
+              <div class="flex justify-between">
+                <span>உணவுகளின் கடை விலை (Item Total)</span>
+                <span class="font-bold text-slate-900" id="billSubtotal">₹0</span>
               </div>
-              <span class="font-bold text-slate-900" id="billDeliveryFee">₹25.00</span>
+              <div class="flex justify-between items-center" id="billDeliveryRow">
+                <span>டெலிவரி கட்டணம் (<span id="billDistanceKmText">1.4 km</span>)</span>
+                <span class="font-bold text-slate-900" id="billDeliveryFee">₹0 (Self-Pickup)</span>
+              </div>
+              <div class="flex justify-between" id="billTipRow">
+                <span>ரைடர் டிப் (Rider Tip)</span>
+                <span class="font-bold text-slate-900" id="billTipAmount">₹0.00</span>
+              </div>
+              <div class="flex justify-between text-emerald-700 font-bold bg-emerald-50 p-2 rounded-xl text-[11px] border border-emerald-200">
+                <span>🎉 Swiggy / Zomato-வை விட நீங்கள் மிச்சப்படுத்தியது:</span>
+                <span class="font-black" id="billSavings">₹0</span>
+              </div>
+              <div class="pt-2 border-t border-slate-100 flex justify-between text-sm font-black text-slate-900">
+                <span>செலுத்த வேண்டிய மொத்தத் தொகை</span>
+                <span class="text-a2b-red text-base" id="billFinalTotal">₹0</span>
+              </div>
             </div>
 
-            <div class="flex justify-between" id="billTipRow">
-              <span>Rider Tip</span>
-              <span class="font-bold text-slate-900" id="billTipAmount">₹0.00</span>
+            <!-- Payment Method Selection -->
+            <div class="mt-4 pt-3 border-t border-slate-100">
+              <span class="text-xs font-bold text-slate-800 block mb-2">பணம் செலுத்தும் வழி (Payment):</span>
+              <div class="space-y-2">
+                <label class="flex items-center justify-between p-2.5 border rounded-xl bg-amber-50/60 border-amber-300 cursor-pointer">
+                  <div class="flex items-center gap-2">
+                    <input type="radio" name="payMethod" value="wallet" checked class="accent-a2b-red">
+                    <div>
+                      <span class="text-xs font-black text-amber-950">A2B Pay Wallet</span>
+                      <span class="text-[10px] text-slate-500 block">இருப்பு: ₹450.00 (Instant 1-Click)</span>
+                    </div>
+                  </div>
+                  <span class="text-[9px] font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">Recommended</span>
+                </label>
+                <label class="flex items-center justify-between p-2.5 border border-slate-200 rounded-xl hover:bg-slate-50 cursor-pointer">
+                  <div class="flex items-center gap-2">
+                    <input type="radio" name="payMethod" value="upi" class="accent-a2b-red">
+                    <span class="text-xs font-semibold text-slate-800">UPI (GPay / PhonePe / Paytm)</span>
+                  </div>
+                </label>
+              </div>
             </div>
 
-            <div class="flex justify-between text-slate-400 text-[11px]">
-              <span>Taxes (5% GST)</span>
-              <span class="font-semibold text-slate-700" id="billTaxes">₹0.00</span>
-            </div>
-
-            <div class="pt-2 border-t border-slate-100 flex justify-between text-sm font-black text-slate-900">
-              <span>To Pay</span>
-              <span class="text-brand-red text-base" id="billFinalTotal">₹0.00</span>
-            </div>
+            <!-- Place Order Button -->
+            <button onclick="placeOrder()" class="mt-4 w-full bg-a2b-red hover:bg-a2b-redDark text-white font-extrabold text-sm py-3.5 rounded-2xl shadow-float transition flex items-center justify-center gap-2 pulse-btn">
+              <span>ஆர்டரை உறுதி செய் (Place Order)</span>
+              <span id="btnPayAmount">→</span>
+            </button>
           </div>
-
-          <!-- Checkout CTA -->
-          <button onclick="placeOrder()" class="w-full bg-brand-red hover:bg-brand-redHover text-white font-extrabold text-sm py-3.5 rounded-2xl shadow-float transition flex items-center justify-between px-5">
-            <div class="text-left">
-              <span class="block text-[10px] font-semibold text-red-200 uppercase tracking-wider" id="btnPaymentMethodLabel">Pay via A2B Pay Wallet</span>
-              <span class="text-sm font-black" id="btnCheckoutAmount">₹0.00</span>
-            </div>
-            <div class="flex items-center gap-1 font-black text-xs">
-              <span>Place Order</span>
-              <span>→</span>
-            </div>
-          </button>
 
         </div>
+      </section>
 
-      </div>
-
-      <!-- ========================================== -->
-      <!-- TAB 4: PROFILE & USER SETTINGS SCREEN      -->
-      <!-- ========================================== -->
-      <div id="screen-profile" class="hidden animate-fade-in px-5 py-4 space-y-4">
-
+      <!-- ==================== TAB 3: PROFILE, WALLET & ADDRESSES ==================== -->
+      <section id="tab-profile" class="hidden px-4 py-4 space-y-4">
+        
         <!-- User Profile Card -->
         <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-5 text-white shadow-card flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <div class="w-13 h-13 rounded-2xl bg-brand-gold text-slate-950 font-black text-base flex items-center justify-center shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-black text-base flex items-center justify-center shadow-sm">
               SR
             </div>
             <div>
@@ -475,48 +458,72 @@
               <p class="text-[10px] text-slate-400">ramanathan.s@chennai.in</p>
             </div>
           </div>
-          <button onclick="editProfileAlert()" class="text-slate-400 hover:text-white text-xs font-bold p-2">
-            ✏️
-          </button>
+          <span class="text-xs bg-white/10 px-2.5 py-1 rounded-xl font-bold text-amber-300">Verified</span>
         </div>
 
-        <!-- Wallet & Rewards Overview Widget -->
-        <div class="grid grid-cols-2 gap-2.5">
-          <!-- A2B Pay Wallet -->
-          <div class="bg-white border border-slate-200/90 rounded-2xl p-3.5 shadow-subtle">
-            <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 block">A2B Pay Balance</span>
-            <div class="text-lg font-black text-slate-900 mt-1" id="profileWalletDisplay">₹450.00</div>
-            <div class="mt-2 flex items-center justify-between">
-              <button onclick="topUpWallet(200)" class="text-[10px] font-extrabold text-brand-red bg-red-50 hover:bg-red-100 px-2 py-1 rounded-lg transition">
-                + Add ₹200
-              </button>
-              <span class="text-[9px] text-slate-400">In-Store / App</span>
+        <!-- Wallet Card -->
+        <div class="bg-gradient-to-br from-red-950 via-a2b-red to-red-900 rounded-3xl p-5 text-white shadow-float relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl"></div>
+
+          <div class="flex items-center justify-between relative z-10">
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl font-black text-amber-400">A2B</span>
+              <span class="text-xs font-bold uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded-full">Pay Balance</span>
             </div>
+            <span class="text-[11px] text-amber-200 font-medium">100% In-Store & Online</span>
           </div>
 
-          <!-- Loyalty Points -->
-          <div class="bg-white border border-slate-200/90 rounded-2xl p-3.5 shadow-subtle">
-            <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 block">Loyalty Points</span>
-            <div class="text-lg font-black text-amber-600 mt-1" id="profilePointsDisplay">280 Pts</div>
-            <div class="mt-2 flex items-center justify-between">
-              <span class="text-[10px] text-emerald-700 font-bold">Worth ₹140</span>
-              <button onclick="redeemPointsAlert()" class="text-[10px] font-extrabold text-slate-700 hover:text-slate-900 underline">
-                Redeem
-              </button>
+          <div class="mt-4 relative z-10">
+            <span class="text-[11px] text-red-200">மொத்த இருப்பு (Available Balance)</span>
+            <div class="text-3xl font-black text-white tracking-tight mt-0.5" id="walletBalanceDisplay">₹450.00</div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-white/15 flex items-center justify-between relative z-10 text-xs">
+            <div>
+              <div class="text-[10px] text-red-200">பதிவு செய்யப்பட்ட மொபைல் எண்:</div>
+              <div class="font-bold tracking-wide text-white">+91 98427 12345</div>
+            </div>
+            <button onclick="quickTopUp(200)" class="bg-amber-400 hover:bg-amber-300 text-red-950 font-bold px-3 py-1.5 rounded-xl shadow-md transition text-xs">
+              + Add ₹200
+            </button>
+          </div>
+        </div>
+
+        <!-- Loyalty Points Tracker with Birthday Treat Progress Bar -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-2xl">🎁</span>
+              <div>
+                <h4 class="text-xs font-black text-amber-950">A2B லாயல்டி ரிவார்ட்ஸ்</h4>
+                <p class="text-[10px] text-amber-800">ஒவ்வொரு ₹100 செலவிற்கும் 5 பாயிண்ட்ஸ்!</p>
+              </div>
+            </div>
+            <span class="text-base font-black text-amber-900" id="walletPointsDisplay">280 Pts</span>
+          </div>
+
+          <!-- Progress Bar to Birthday Treat -->
+          <div class="mt-3">
+            <div class="flex justify-between text-[11px] font-semibold text-amber-900 mb-1">
+              <span>அடுத்த பரிசு: <strong>பர்த்டே ஸ்பெஷல் ஸ்வீட் பாக்ஸ் (250g)</strong></span>
+              <span>280 / 300 Pts</span>
+            </div>
+            <div class="w-full bg-amber-200 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-amber-500 to-a2b-red h-full rounded-full transition-all duration-500" style="width: 88%"></div>
+            </div>
+            <div class="flex justify-between items-center text-[10px] text-amber-800/80 mt-1.5">
+              <span>இன்னும் 20 பாயிண்ட்ஸ் எடுத்தால் இலவச மைசூர்பாக்!</span>
+              <span class="font-bold text-red-800">பிறந்தநாள்: 14 அக்டோபர்</span>
             </div>
           </div>
         </div>
 
-        <!-- Saved Addresses Section -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-subtle">
-          <div class="flex items-center justify-between mb-3">
-            <h4 class="text-xs font-black text-slate-900 uppercase tracking-wider">Saved Addresses (Chennai)</h4>
-            <button onclick="addNewAddressAlert()" class="text-[11px] font-extrabold text-brand-red">+ Add New</button>
-          </div>
-
-          <div class="space-y-2.5">
-            <!-- Address 1: Adyar Home -->
-            <div onclick="selectAddress('home')" class="p-2.5 border rounded-xl cursor-pointer transition flex items-center justify-between bg-red-50/40 border-brand-red" id="addr-card-home">
+        <!-- Saved Addresses in Chennai -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs">
+          <h4 class="text-xs font-black text-slate-900 uppercase tracking-wider mb-2.5">சேமிக்கப்பட்ட முகவரிகள் (Saved Addresses):</h4>
+          
+          <div class="space-y-2">
+            <div onclick="selectAddress('home')" class="p-2.5 border rounded-xl cursor-pointer transition flex items-center justify-between bg-red-50/40 border-a2b-red" id="addr-card-home">
               <div class="flex items-center gap-2.5">
                 <span class="text-sm">🏠</span>
                 <div>
@@ -524,10 +531,9 @@
                   <div class="text-[10px] text-slate-500">4th Main Rd, Gandhi Nagar, Adyar • 1.4 km from A2B</div>
                 </div>
               </div>
-              <span class="text-xs font-bold text-brand-red" id="addr-check-home">✓</span>
+              <span class="text-xs font-bold text-a2b-red" id="addr-check-home">✓</span>
             </div>
 
-            <!-- Address 2: OMR Office -->
             <div onclick="selectAddress('work')" class="p-2.5 border rounded-xl cursor-pointer transition flex items-center justify-between border-slate-200 hover:border-slate-300" id="addr-card-work">
               <div class="flex items-center gap-2.5">
                 <span class="text-sm">🏢</span>
@@ -539,7 +545,6 @@
               <span class="text-xs font-bold text-slate-300" id="addr-check-work"></span>
             </div>
 
-            <!-- Address 3: Mylapore Parents -->
             <div onclick="selectAddress('mylapore')" class="p-2.5 border rounded-xl cursor-pointer transition flex items-center justify-between border-slate-200 hover:border-slate-300" id="addr-card-mylapore">
               <div class="flex items-center gap-2.5">
                 <span class="text-sm">🛕</span>
@@ -553,275 +558,176 @@
           </div>
         </div>
 
-        <!-- Recent Order History -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-subtle">
-          <div class="flex items-center justify-between mb-3">
-            <h4 class="text-xs font-black text-slate-900 uppercase tracking-wider">Past Orders</h4>
-            <span class="text-[11px] text-slate-400">Last 30 days</span>
-          </div>
-
-          <div class="space-y-3">
-            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between">
-              <div>
-                <div class="flex items-center gap-2">
-                  <span class="text-xs font-black text-slate-900">#A2B-CH-4192</span>
-                  <span class="text-[9px] font-bold bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded">Delivered</span>
-                </div>
-                <p class="text-[10px] text-slate-500 mt-0.5">2x Ghee Roast, 1x Mysore Pak (250g)</p>
-                <span class="text-[10px] text-slate-400">Yesterday, 8:40 AM • Paid ₹355</span>
-              </div>
-              <button onclick="reorderFast()" class="text-xs font-extrabold text-brand-red bg-white border border-red-200 px-2.5 py-1.5 rounded-lg shadow-xs hover:bg-red-50">
-                Reorder
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Dietary Preferences & Help -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-4 shadow-subtle space-y-3">
-          <h4 class="text-xs font-black text-slate-900 uppercase tracking-wider">Preferences & Support</h4>
-          
-          <div class="space-y-2 text-xs">
-            <div class="flex items-center justify-between py-1">
-              <span class="text-slate-700 font-semibold">Strict Jain Dietary Filter</span>
-              <input type="checkbox" id="jainFilterToggle" onchange="toggleJainPreference(this.checked)" class="accent-brand-red w-4 h-4 rounded">
-            </div>
-            <div class="flex items-center justify-between py-1 border-t border-slate-100">
-              <span class="text-slate-700 font-semibold">Language / மொழி</span>
-              <span class="text-[11px] font-bold text-brand-red">English (தமிழ்)</span>
-            </div>
-            <div class="flex items-center justify-between py-1 border-t border-slate-100">
-              <span class="text-slate-700 font-semibold">A2B Chennai Customer Care</span>
-              <a href="tel:04422201234" class="text-[11px] font-bold text-slate-900">044-2220-1234</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ========================================== -->
-      <!-- TAB 5: LIVE ORDER TRACKING SCREEN (MODAL)  -->
-      <!-- ========================================== -->
-      <div id="screen-tracking" class="hidden animate-fade-in px-5 py-4 space-y-4">
-        
-        <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-card text-center relative overflow-hidden">
-          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-xl mx-auto mb-2 font-black">
-            ✓
-          </div>
-          <span class="inline-block bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2 py-0.5 rounded-full mb-1">
-            Order Confirmed #A2B-CH-48291
-          </span>
-          <h3 class="text-base font-black text-slate-900" id="trackingStatusHeadline">Food is being prepared with pure ghee</h3>
-          <p class="text-xs text-slate-500 mt-0.5" id="trackingBranchName">A2B Adyar Flagship (L.B. Road)</p>
-
-          <!-- Simulated Map Route -->
-          <div class="mt-4 bg-slate-100 border border-slate-200 rounded-2xl p-4 relative overflow-hidden text-left">
-            <div class="flex items-center justify-between text-xs font-bold text-slate-800 mb-2">
-              <span class="flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-                <span>Live Delivery Route</span>
-              </span>
-              <span class="text-brand-red font-black" id="trackingEtaText">14 mins remaining</span>
-            </div>
-
-            <!-- Route Graph Visual -->
-            <div class="relative py-2">
-              <div class="h-1 bg-slate-300 w-full rounded-full">
-                <div class="h-1 bg-brand-red rounded-full w-2/3"></div>
-              </div>
-              <div class="flex justify-between items-center text-[10px] text-slate-600 mt-2 font-medium">
-                <span>🏨 A2B Adyar Kitchen</span>
-                <span>🛵 Delivery Partner</span>
-                <span>🏠 Your Home</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Assigned Delivery Partner Card -->
-          <div class="mt-4 bg-slate-50 border border-slate-200 rounded-2xl p-3 flex items-center justify-between text-left">
-            <div class="flex items-center gap-2.5">
-              <div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-700 text-xs">
-                KR
-              </div>
-              <div>
-                <div class="text-xs font-black text-slate-900">Karthik Raja</div>
-                <div class="text-[10px] text-slate-500">⭐ 4.9 (1,420 deliveries) • Shadowfax Partner</div>
-              </div>
-            </div>
-            <a href="tel:9840012345" class="bg-white border border-slate-200 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-xl shadow-xs hover:bg-slate-100">
-              📞 Call
-            </a>
-          </div>
-
-          <button onclick="switchTab('home')" class="mt-4 w-full bg-slate-900 text-white text-xs font-bold py-3 rounded-xl">
-            Back to Home
-          </button>
-        </div>
-
-      </div>
+      </section>
 
     </main>
 
-    <!-- FLOATING CART BAR (If cart has items) -->
-    <div id="bottomFloatingCart" class="hidden fixed bottom-18 left-4 right-4 max-w-[calc(100%-2rem)] md:max-w-sm mx-auto bg-gradient-to-r from-brand-red to-[#6e0000] text-white rounded-2xl px-4 py-3 shadow-float flex items-center justify-between z-40 cursor-pointer" onclick="switchTab('cart')">
+    <!-- FLOATING CART BAR (Always floats above bottom nav when cart has items) -->
+    <div id="bottomFloatingCart" class="hidden fixed bottom-18 left-4 right-4 max-w-[calc(100%-2rem)] md:max-w-sm mx-auto bg-gradient-to-r from-a2b-red to-red-950 text-white rounded-2xl px-4 py-3 shadow-float flex items-center justify-between z-40 cursor-pointer" onclick="switchTab('cart')">
       <div class="flex items-center gap-2.5">
-        <div class="w-6 h-6 rounded-full bg-brand-gold text-slate-950 font-black text-xs flex items-center justify-center" id="floatingBadgeCount">
+        <div class="w-6 h-6 rounded-full bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center" id="floatingBadgeCount">
           1
         </div>
         <div>
           <div class="text-xs font-black" id="floatingCartAmount">₹85.00</div>
-          <div class="text-[10px] text-red-200">View Cart & Checkout</div>
+          <div class="text-[10px] text-amber-200">கார்ட்டைப் பார்த்து ஆர்டர் செய்ய கிளிக் செய்</div>
         </div>
       </div>
       <div class="flex items-center gap-1 font-extrabold text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-xl transition">
-        <span>Proceed</span>
+        <span>Cart பார்க்க</span>
         <span>→</span>
       </div>
     </div>
 
-    <!-- BOTTOM APP NAVIGATION BAR (Always Fixed to Bottom on all mobile phones) -->
-    <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 px-6 py-2.5 pb-[max(0.6rem,env(safe-area-inset-bottom))] flex items-center justify-between z-40 select-none shadow-lg">
+    <!-- BOTTOM APP NAVIGATION BAR (Always Fixed to Phone Viewport) -->
+    <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 px-8 py-2.5 pb-[max(0.6rem,env(safe-area-inset-bottom))] flex items-center justify-between z-40 select-none shadow-lg">
       
-      <!-- Nav 1: Home -->
-      <button onclick="switchTab('home')" id="nav-home" class="nav-item flex flex-col items-center gap-0.5 text-brand-red font-bold">
+      <!-- Nav 1: Home / Menu -->
+      <button onclick="switchTab('home')" id="nav-home" class="nav-item flex flex-col items-center gap-0.5 text-a2b-red font-bold">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        <span class="text-[10px]">Home</span>
+        <span class="text-[10px]">மெனு (Menu)</span>
       </button>
 
-      <!-- Nav 2: Menu -->
-      <button onclick="switchTab('menu')" id="nav-menu" class="nav-item flex flex-col items-center gap-0.5 text-slate-400 hover:text-slate-600 font-semibold">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        <span class="text-[10px]">Menu</span>
-      </button>
-
-      <!-- Nav 3: Cart -->
+      <!-- Nav 2: Cart -->
       <button onclick="switchTab('cart')" id="nav-cart" class="nav-item flex flex-col items-center gap-0.5 text-slate-400 hover:text-slate-600 font-semibold relative">
         <div class="relative">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-          <span id="navCartDot" class="hidden absolute -top-1.5 -right-2 bg-brand-red text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+          <span id="navCartDot" class="hidden absolute -top-1.5 -right-2 bg-a2b-red text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
         </div>
-        <span class="text-[10px]">Cart</span>
+        <span class="text-[10px]">கார்ட் (Cart)</span>
       </button>
 
-      <!-- Nav 4: Profile -->
+      <!-- Nav 3: Profile / Wallet -->
       <button onclick="switchTab('profile')" id="nav-profile" class="nav-item flex flex-col items-center gap-0.5 text-slate-400 hover:text-slate-600 font-semibold">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-        <span class="text-[10px]">Profile</span>
+        <span class="text-[10px]">ப்ரொஃபைல்</span>
       </button>
 
     </nav>
 
   </div> <!-- End Mobile App Frame -->
 
-  <!-- ==================================================== -->
-  <!-- BOTTOM SHEET DRAWER: CHENNAI BRANCHES & ADDRESSES   -->
-  <!-- ==================================================== -->
-  <div id="drawerBranches" class="hidden fixed inset-0 bg-slate-950/60 backdrop-blur-xs flex items-end justify-center z-50 transition-opacity">
-    <div class="bg-white rounded-t-[32px] max-w-md w-full p-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-sheet max-h-[85vh] overflow-y-auto space-y-3.5 animate-fade-in">
-      
-      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
-        <div>
-          <h3 class="text-sm font-black text-slate-900">Select Chennai Branch</h3>
-          <p class="text-xs text-slate-500">Food is prepared fresh at your selected branch</p>
-        </div>
-        <button onclick="closeBranchDrawer()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
-          ✕
-        </button>
+  <!-- ==================== MODAL: ORDER SUCCESS WITH LIVE TRACKING ==================== -->
+  <div id="modalOrderSuccess" class="hidden fixed inset-0 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl text-center space-y-3.5 animate-slide-up">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto shadow-sm">
+        ✓
+      </div>
+      <div>
+        <span class="inline-block bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2 py-0.5 rounded-full mb-1">
+          ஆர்டர் ஏற்கப்பட்டது #A2B-CH-8942
+        </span>
+        <h3 class="text-lg font-black text-slate-900">கிச்சனில் சுடச்சுட தயாராகிறது!</h3>
+        <p class="text-xs text-slate-500 mt-0.5" id="orderSuccessBranch">A2B Adyar Flagship (L.B. Road)</p>
       </div>
 
-      <!-- Chennai Branches List -->
-      <div class="space-y-2.5">
-        
-        <!-- Adyar Flagship -->
-        <div onclick="selectChennaiBranch('adyar', 'Adyar Flagship (L.B. Road)', 1.4)" class="branch-card p-3 border-2 rounded-2xl cursor-pointer transition hover:border-brand-red bg-red-50/40 border-brand-red">
-          <div class="flex justify-between items-start">
-            <div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-xs font-black text-slate-900">A2B Adyar Flagship</span>
-                <span class="bg-brand-red text-white text-[8px] font-extrabold px-1.5 py-0.2 rounded uppercase">Fastest</span>
-              </div>
-              <p class="text-[11px] text-slate-500 mt-0.5">Lattice Bridge (L.B.) Road, Adyar, Chennai</p>
-            </div>
-            <div class="text-right">
-              <span class="text-xs font-black text-emerald-700">1.4 km</span>
-              <div class="text-[10px] text-slate-400">~18 mins</div>
-            </div>
-          </div>
+      <!-- Live Tracking Card -->
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3 text-left text-xs space-y-2">
+        <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+          <span class="text-slate-500">உணவு பெறும் முறை:</span>
+          <span class="font-black text-emerald-700" id="successFulfillmentMode">Self Pickup</span>
         </div>
-
-        <!-- T. Nagar -->
-        <div onclick="selectChennaiBranch('tnagar', 'T. Nagar (Venkatanarayana Rd)', 4.2)" class="branch-card p-3 border rounded-2xl cursor-pointer transition hover:border-brand-red border-slate-200">
-          <div class="flex justify-between items-start">
-            <div>
-              <span class="text-xs font-bold text-slate-900">A2B T. Nagar</span>
-              <p class="text-[11px] text-slate-500 mt-0.5">Venkatanarayana Road, T. Nagar, Chennai</p>
-            </div>
-            <div class="text-right">
-              <span class="text-xs font-semibold text-slate-700">4.2 km</span>
-              <div class="text-[10px] text-slate-400">~30 mins</div>
-            </div>
-          </div>
+        <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+          <span class="text-slate-500">தயார் நேரம் / ETA:</span>
+          <span class="font-extrabold text-a2b-red" id="successEtaText">இன்னும் 12 நிமிடங்களில்</span>
         </div>
-
-        <!-- Mylapore -->
-        <div onclick="selectChennaiBranch('mylapore', 'Mylapore (R.K. Mutt Rd)', 2.8)" class="branch-card p-3 border rounded-2xl cursor-pointer transition hover:border-brand-red border-slate-200">
-          <div class="flex justify-between items-start">
-            <div>
-              <span class="text-xs font-bold text-slate-900">A2B Mylapore</span>
-              <p class="text-[11px] text-slate-500 mt-0.5">R.K. Mutt Road, Near Kapaleeshwarar Temple</p>
-            </div>
-            <div class="text-right">
-              <span class="text-xs font-semibold text-slate-700">2.8 km</span>
-              <div class="text-[10px] text-slate-400">~22 mins</div>
-            </div>
-          </div>
+        <div class="flex justify-between items-center">
+          <span class="text-slate-500">கிடைத்த லாயல்டி பாயிண்ட்ஸ்:</span>
+          <span class="font-extrabold text-amber-700">+10 Pts added! ⭐</span>
         </div>
-
-        <!-- Velachery -->
-        <div onclick="selectChennaiBranch('velachery', 'Velachery (100 Ft Bypass)', 3.6)" class="branch-card p-3 border rounded-2xl cursor-pointer transition hover:border-brand-red border-slate-200">
-          <div class="flex justify-between items-start">
-            <div>
-              <span class="text-xs font-bold text-slate-900">A2B Velachery</span>
-              <p class="text-[11px] text-slate-500 mt-0.5">100 Feet Bypass Road, Velachery, Chennai</p>
-            </div>
-            <div class="text-right">
-              <span class="text-xs font-semibold text-slate-700">3.6 km</span>
-              <div class="text-[10px] text-slate-400">~25 mins</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- OMR Thoraipakkam -->
-        <div onclick="selectChennaiBranch('omr', 'OMR (Thoraipakkam IT Hub)', 6.1)" class="branch-card p-3 border rounded-2xl cursor-pointer transition hover:border-brand-red border-slate-200">
-          <div class="flex justify-between items-start">
-            <div>
-              <span class="text-xs font-bold text-slate-900">A2B OMR IT Corridor</span>
-              <p class="text-[11px] text-slate-500 mt-0.5">Rajiv Gandhi Salai, Thoraipakkam, OMR</p>
-            </div>
-            <div class="text-right">
-              <span class="text-xs font-semibold text-slate-700">6.1 km</span>
-              <div class="text-[10px] text-slate-400">~35 mins</div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <button onclick="closeBranchDrawer()" class="w-full bg-slate-900 text-white font-bold text-xs py-3 rounded-2xl">
-        Confirm Selection
+      <!-- Live Delivery Partner Card (If delivery) -->
+      <div id="successRiderCard" class="bg-amber-50/70 border border-amber-200 rounded-2xl p-3 flex items-center justify-between text-left">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full bg-amber-200 text-amber-900 flex items-center justify-center font-bold text-xs">
+            KR
+          </div>
+          <div>
+            <div class="text-xs font-black text-slate-900">கார்த்திக் ராஜா (Karthik Raja)</div>
+            <div class="text-[10px] text-slate-500">⭐ 4.9 (1,420 டெலிவரி) • Shadowfax Partner</div>
+          </div>
+        </div>
+        <a href="tel:9840012345" class="bg-white border border-amber-300 text-amber-950 text-xs font-bold px-2.5 py-1 rounded-xl shadow-xs">
+          📞 Call
+        </a>
+      </div>
+
+      <button onclick="closeSuccessModalAndReset()" class="w-full bg-a2b-red text-white font-black text-xs py-3 rounded-xl shadow-md transition hover:bg-a2b-redDark">
+        சரி (Back to Menu)
       </button>
     </div>
   </div>
 
-  <!-- JAVASCRIPT APPLICATION CORE -->
+  <!-- ==================== MODAL: CHENNAI BRANCH SELECTOR ==================== -->
+  <div id="modalBranch" class="hidden fixed inset-0 bg-slate-950/60 backdrop-blur-xs flex items-end justify-center z-50">
+    <div class="bg-white rounded-t-[32px] max-w-md w-full p-5 pb-8 shadow-sheet max-h-[85vh] overflow-y-auto space-y-3.5 animate-slide-up">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+        <div>
+          <h3 class="text-sm font-black text-slate-900">சென்னை கிளை தேர்வு (Select Branch)</h3>
+          <p class="text-[11px] text-slate-500">உணவு தயாரிக்கப்படும் அருகிலுள்ள கடையை மாற்றவும்</p>
+        </div>
+        <button onclick="closeBranchModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800">
+          ✕
+        </button>
+      </div>
+
+      <div class="space-y-2">
+        <div onclick="selectBranch('adyar', 'Adyar Flagship (L.B. Road)', 1.4)" class="p-3 border-2 rounded-2xl cursor-pointer transition hover:border-a2b-red bg-red-50/40 border-a2b-red">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-xs font-black text-slate-900">📍 அடையாறு (L.B. Road Flagship)</span>
+              <span class="bg-a2b-red text-white text-[8px] font-black px-1.5 py-0.2 rounded uppercase ml-1">Fastest</span>
+              <p class="text-[11px] text-slate-500 mt-0.5">Lattice Bridge Road, Adyar, Chennai</p>
+            </div>
+            <span class="text-xs font-black text-emerald-700">1.4 km</span>
+          </div>
+        </div>
+
+        <div onclick="selectBranch('tnagar', 'T. Nagar (Venkatanarayana Rd)', 4.2)" class="p-3 border rounded-2xl cursor-pointer transition hover:border-a2b-red border-slate-200">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-xs font-bold text-slate-900">📍 தி. நகர் (Venkatanarayana Road)</span>
+              <p class="text-[11px] text-slate-500 mt-0.5">Near Panagal Park, T. Nagar, Chennai</p>
+            </div>
+            <span class="text-xs font-semibold text-slate-600">4.2 km</span>
+          </div>
+        </div>
+
+        <div onclick="selectBranch('mylapore', 'Mylapore (R.K. Mutt Rd)', 2.8)" class="p-3 border rounded-2xl cursor-pointer transition hover:border-a2b-red border-slate-200">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-xs font-bold text-slate-900">📍 மயிலாப்பூர் (R.K. Mutt Road)</span>
+              <p class="text-[11px] text-slate-500 mt-0.5">Near Kapaleeshwarar Temple, Mylapore</p>
+            </div>
+            <span class="text-xs font-semibold text-slate-600">2.8 km</span>
+          </div>
+        </div>
+
+        <div onclick="selectBranch('velachery', 'Velachery (100 Ft Bypass)', 3.6)" class="p-3 border rounded-2xl cursor-pointer transition hover:border-a2b-red border-slate-200">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-xs font-bold text-slate-900">📍 வேளச்சேரி (100 Feet Bypass Road)</span>
+              <p class="text-[11px] text-slate-500 mt-0.5">Near Phoenix Mall, Velachery</p>
+            </div>
+            <span class="text-xs font-semibold text-slate-600">3.6 km</span>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="closeBranchModal()" class="w-full bg-slate-900 text-white font-bold text-xs py-3 rounded-2xl">
+        Confirm Branch
+      </button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     // ==========================================
-    // AUTHENTIC A2B CHENNAI MENU DATABASE
+    // AUTHENTIC SWIGGY/ZOMATO A2B CHENNAI CATALOG
     // ==========================================
     const A2B_CATALOG = [
-      // ==========================================
-      // 15 AUTHENTIC A2B FOOD ITEMS (SWIGGY/ZOMATO CHENNAI BESTSELLERS)
-      // ==========================================
+      // 15 FOOD DISHES
       {
         id: 'f-ghee-roast',
         name: 'Spl Ghee Roast Dosai',
@@ -833,8 +739,7 @@
         rating: 4.9,
         reviews: '3.8K+',
         bestseller: true,
-        jain: false,
-        desc: 'Crisped with 100% pure cow ghee. Served with 3 signature coconut & tomato chutneys & hot vegetable sambar.',
+        desc: 'சுத்தமான பசு நெய்யில் சுடப்பட்ட மொறுமொறுப்பான தோசை, 3 வகை சட்னி & கெட்டி சாம்பாருடன்.',
         image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -848,8 +753,7 @@
         rating: 4.9,
         reviews: '2.9K+',
         bestseller: true,
-        jain: true,
-        desc: '14 coin-sized button idlis submerged in piping hot spiced lentil sambar topped with pure ghee & coriander.',
+        desc: 'நெய் மிதக்கும் சுவையான சாம்பாரில் ஊறிய 14 பூ போன்ற குட்டி இட்லிகள்.',
         image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -863,8 +767,7 @@
         rating: 4.8,
         reviews: '2.1K+',
         bestseller: true,
-        jain: false,
-        desc: 'Traditional rice and moong dal tempered with crushed black pepper, cumin, ginger & roasted cashews with crispy vada.',
+        desc: 'முந்திரி, மிளகு, சீரகம் நெய்யில் வறுத்த சுடச்சுட வெண் பொங்கல், 1 மொறுமொறு வடையுடன்.',
         image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -878,8 +781,7 @@
         rating: 4.8,
         reviews: '1.6K+',
         bestseller: false,
-        jain: true,
-        desc: 'Feather-soft steamed jasmine-white rice cakes paired with crunchy medu vada, fresh coconut & tomato chutney.',
+        desc: 'பூ போன்ற மிருதுவான ஆவி பறக்கும் இட்லி, மெது வடை மற்றும் கெட்டி சட்னி.',
         image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -893,8 +795,7 @@
         rating: 4.7,
         reviews: '1.1K+',
         bestseller: false,
-        jain: false,
-        desc: 'Golden-fried spiced urad dal doughnut fritters with crisp golden crust and fluffy interior.',
+        desc: 'வெளிப்புறம் மொறுமொறுப்பாகவும் உள்புறம் மென்மையாகவும் சுடப்பட்ட பாரம்பரிய வடை.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -908,8 +809,7 @@
         rating: 4.9,
         reviews: '1.9K+',
         bestseller: true,
-        jain: false,
-        desc: 'Crispy roast smeared with spicy A2B gun-powder, clarified butter and stuffed with yellow potato masala.',
+        desc: 'காரசாரமான இட்லி பொடி மற்றும் உருளைக்கிழங்கு மசாலா வைத்து சுடப்பட்ட ஸ்பெஷல் தோசை.',
         image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -923,8 +823,7 @@
         rating: 4.8,
         reviews: '1.8K+',
         bestseller: false,
-        jain: false,
-        desc: 'Golden lace semolina crepe garnished with crushed peppercorns, cashews, ginger and potato masala.',
+        desc: 'முந்திரி, மிளகு நறுமணத்துடன் பொன்னிறமாக மொறுமொறுவென சுடப்படும் ரவா தோசை.',
         image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -938,8 +837,7 @@
         rating: 4.8,
         reviews: '1.4K+',
         bestseller: false,
-        jain: false,
-        desc: 'Thick soft fermented pancake topped with crunchy shallots, idli podi and liberal ghee.',
+        desc: 'சின்ன வெங்காயம், காரப் பொடி தூவி பசு நெய்யில் வார்க்கப்பட்ட தடிமனான ஊத்தப்பம்.',
         image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -953,8 +851,7 @@
         rating: 4.8,
         reviews: '1.5K+',
         bestseller: false,
-        jain: false,
-        desc: 'Fluffy whole-wheat puffed breads served with classic South Indian potato onion masala.',
+        desc: 'சூடான உப்பிய கோதுமை பூரி, சுவையான உருளைக்கிழங்கு மசாலாவுடன்.',
         image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -968,8 +865,7 @@
         rating: 4.9,
         reviews: '2.4K+',
         bestseller: true,
-        jain: false,
-        desc: 'Huge puffy bhatura served with Punjabi style aromatic chickpea masala, onion and lemon salad.',
+        desc: 'பெரிய பஞ்சு போன்ற சோழா பூரி, காரசாரமான சென்னா மசாலா கிரேவியுடன்.',
         image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -983,8 +879,7 @@
         rating: 4.9,
         reviews: '7.2K+',
         bestseller: true,
-        jain: false,
-        desc: 'Complete banquet: Ponni rice, Sambar, Rasam, Vatha Kuzhambu, 2 Poriyals, Kootu, Appalam, Curd & Payasam.',
+        desc: 'பொன்னி சாதம், சாம்பார், ரசம், வத்தக்குழம்பு, 2 பொரியல், கூட்டு, அப்பளம், தயிர் மற்றும் பாயாசம்.',
         image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -998,8 +893,7 @@
         rating: 4.7,
         reviews: '3.1K+',
         bestseller: false,
-        jain: false,
-        desc: 'Quick lunch combo of Sambar rice, Curd rice, vegetable poriyal, appalam, sweet and spicy pickle.',
+        desc: 'அலுவலக மதிய உணவுக்கு ஏற்ற அளவான சாம்பார் சாதம், தயிர் சாதம், பொரியல் மற்றும் அப்பளம்.',
         image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1013,8 +907,7 @@
         rating: 4.8,
         reviews: '1.9K+',
         bestseller: false,
-        jain: false,
-        desc: 'Karnataka-style spiced rice, lentils & mixed veggies cooked in rich ghee, served with crunchy kara boondi.',
+        desc: 'நெய் மணம் கமழும் காய்கறி பிசிபேளேபாத், மொறுமொறு கார பூந்தியுடன்.',
         image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1028,8 +921,7 @@
         rating: 4.8,
         reviews: '2.5K+',
         bestseller: false,
-        jain: true,
-        desc: 'Cool homemade curd mixed with soft cooked rice, tempered with mustard seeds, ginger, curry leaves & sun-dried chilli.',
+        desc: 'சுவையான தயிர் சாதம், கடுகு, இஞ்சி தாளித்து வறுத்த மோர் மிளகாயுடன்.',
         image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1043,14 +935,11 @@
         rating: 4.9,
         reviews: '9.4K+',
         bestseller: true,
-        jain: false,
-        desc: 'Signature spicy crunchy snack made with sev, fried cashews, peanuts, roasted gram and aromatic curry leaves.',
+        desc: 'முந்திரி, நிலக்கடலை, கறிவேப்பிலை நறுமணத்துடன் மொறுமொறு கார மிக்சர்.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
 
-      // ==========================================
-      // 10 AUTHENTIC A2B SWEETS (SWIGGY/ZOMATO CHENNAI BESTSELLERS)
-      // ==========================================
+      // 10 SWEETS
       {
         id: 's-mysore-pak',
         name: 'Spl Ghee Mysore Pak (250 gms)',
@@ -1062,8 +951,7 @@
         rating: 5.0,
         reviews: '14K+',
         bestseller: true,
-        jain: true,
-        desc: 'A2B’s world-famous melt-in-mouth confection made with royal besan gram, generous pure desi ghee & sugar.',
+        desc: 'வாயில் போட்டவுடன் கரையும் A2B-யின் உலகப் புகழ்பெற்ற சிக்னேச்சர் நெய் மைசூர்பாக்.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1077,8 +965,7 @@
         rating: 4.9,
         reviews: '6.4K+',
         bestseller: true,
-        jain: true,
-        desc: 'Diamond-cut cashew fudge crafted using 100% whole grade Goan cashews without artificial flavors or milk mawa.',
+        desc: '100% தூய முந்திரிப் பருப்பில் செய்யப்பட்ட பிரீமியம் காஜு கத்லி வைரத்துண்டுகள்.',
         image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1092,8 +979,7 @@
         rating: 4.8,
         reviews: '4.2K+',
         bestseller: false,
-        jain: true,
-        desc: 'Melt-in-mouth tiny boondi spheres cooked in pure ghee and soaked in saffron cardamom syrup with melon seeds.',
+        desc: 'நன்கு நெய்யும் ஏலக்காயும் மணக்கும் சிறு உருண்டை மோதிசூர் லட்டு.',
         image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1107,8 +993,7 @@
         rating: 4.8,
         reviews: '2.9K+',
         bestseller: false,
-        jain: true,
-        desc: 'Slow-simmered whole wheat milk pudding glistening with pure ghee and roasted cashew nuts.',
+        desc: 'நெய் சொட்டும் பாரம்பரிய கோதுமை அல்வா, முந்திரிப் பருப்புடன்.',
         image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1122,8 +1007,7 @@
         rating: 4.9,
         reviews: '2.2K+',
         bestseller: true,
-        jain: true,
-        desc: 'Rich California almond paste cooked with whole milk, Kashmiri saffron strands and pure desi ghee.',
+        desc: 'சுத்தமான பாதாம் பருப்பு, பால் மற்றும் குங்குமப்பூ சேர்த்து நெய்யில் வதக்கிய பிரீமியம் அல்வா.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1137,8 +1021,7 @@
         rating: 4.8,
         reviews: '2.7K+',
         bestseller: false,
-        jain: true,
-        desc: 'Juicy, rose-scented circular swirls of urad batter fried in pure ghee and submerged in warm fragrant sugar syrup.',
+        desc: 'சுத்தமான நெய்யில் சுட்டு சர்க்கரை பாகில் ஊறிய சுவையான மினி ஜாங்கிரி.',
         image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1152,8 +1035,7 @@
         rating: 4.7,
         reviews: '1.5K+',
         bestseller: false,
-        jain: true,
-        desc: 'Creamy condensed whole milk fudge delicately spiced with green cardamom and garnished with Iranian pistachios.',
+        desc: 'பசும்பாலில் திரட்டப்பட்ட மிருதுவான பால்கோவா பேடா, பிஸ்தா துண்டுகளுடன்.',
         image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1167,8 +1049,7 @@
         rating: 4.9,
         reviews: '1.9K+',
         bestseller: false,
-        jain: true,
-        desc: 'Wholesome chew made with Arabian dates, figs, almonds, cashews and pistachio cubes with zero refined sugar.',
+        desc: 'பேரீச்சம்பழம், அத்திப்பழம், முந்திரி, பாதாம் மற்றும் பிஸ்தாவில் செய்யப்பட்ட சுகர்-ஃப்ரீ அல்வா.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1182,8 +1063,7 @@
         rating: 4.9,
         reviews: '2.8K+',
         bestseller: true,
-        jain: true,
-        desc: 'Delicate cashew sheets rolled with finely ground roasted pistachios and wrapped in pure edible silver vark.',
+        desc: 'முந்திரிப் பருப்பு சுருளில் நறுக்கிய பிஸ்தா வைத்து சுற்றப்பட்ட பிரீமியம் ஸ்வீட்.',
         image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -1197,14 +1077,11 @@
         rating: 4.9,
         reviews: '4.8K+',
         bestseller: true,
-        jain: true,
-        desc: 'Soft spongy paneer discs steeped in chilled cardamom-infused saffron malai rabri and crushed almonds.',
+        desc: 'குங்குமப்பூ கலந்த குளிர்ந்த ரப்ரி பாலில் ஊறிய மிருதுவான பனீர் ரசமலாய்.',
         image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
       },
 
-      // ==========================================
-      // ICONIC BEVERAGE
-      // ==========================================
+      // 1 BEVERAGE
       {
         id: 'b-degree-coffee',
         name: 'Kumbakonam Degree Filter Coffee',
@@ -1216,33 +1093,31 @@
         rating: 5.0,
         reviews: '18K+',
         bestseller: true,
-        jain: true,
-        desc: 'Freshly brewed decoction using 80:20 plantation blend and frothy unadulterated whole cow milk.',
+        desc: 'சுத்தமான பசும்பாலில் நுரை பொங்கத் தயாரிக்கப்படும் அசல் டிகிரி ஃபில்டர் காபி.',
         image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&auto=format&fit=crop&q=80'
       }
     ];
 
     // ==========================================
-    // APPLICATION STATE
+    // APP STATE
     // ==========================================
     let appState = {
       activeTab: 'home',
       activeCategory: 'all',
       searchQuery: '',
-      menuFilter: 'all', // all | bestseller | jain
       selectedBranch: {
         id: 'adyar',
         name: 'Adyar Flagship (L.B. Road)',
         distanceKm: 1.4,
-        locality: 'Adyar, Chennai'
+        city: 'Adyar, Chennai'
       },
       currentAddress: {
         type: 'Home',
         title: 'Home (Adyar)',
-        full: '4th Main Road, Gandhi Nagar, Adyar, Chennai - 600020'
+        sub: '4th Main Road, Gandhi Nagar, Adyar, Chennai - 600020'
       },
-      deliveryDistanceKm: 1.8,
-      orderType: 'delivery', // 'delivery' | 'pickup'
+      deliveryDistanceKm: 1.4,
+      fulfillment: 'pickup', // pickup | delivery
       tipAmount: 0,
       walletBalance: 450.00,
       loyaltyPoints: 280,
@@ -1251,20 +1126,10 @@
       ]
     };
 
-    // ==========================================
-    // DYNAMIC DISTANCE DELIVERY FEE CALCULATION
-    // ==========================================
-    /*
-      Delivery Fee Structure for Riders:
-      - Up to 2.0 km: Flat Base Fare = ₹25.00
-      - Beyond 2.0 km up to 6.0 km: Base ₹25 + ₹7.00 per km
-      - Beyond 6.0 km: Base ₹25 + (4 * ₹7) + ₹10.00 per km
-      100% of this fee goes directly to the delivery person.
-    */
-    function calculateRiderDeliveryFee(distanceKm) {
-      if (appState.orderType === 'pickup') return 0;
-      
-      const d = parseFloat(distanceKm);
+    // Distance-based delivery fee calculation
+    function calculateRiderDeliveryFee(distKm) {
+      if (appState.fulfillment === 'pickup') return 0;
+      const d = parseFloat(distKm);
       let fee = 25.00;
       if (d > 2.0 && d <= 6.0) {
         fee += (d - 2.0) * 7.00;
@@ -1275,67 +1140,66 @@
     }
 
     // ==========================================
-    // RENDERING LOGIC
+    // RENDERING FUNCTIONS
     // ==========================================
 
-    function renderProductFeed() {
-      const container = document.getElementById('productFeed');
-      const countLabel = document.getElementById('itemCountLabel');
+    function renderMenu() {
+      const container = document.getElementById('menuItemsContainer');
+      const countDisplay = document.getElementById('itemCountDisplay');
       
       let items = A2B_CATALOG.filter(item => {
-        // Search query
         if (appState.searchQuery.trim() !== '') {
           const q = appState.searchQuery.toLowerCase();
           return item.name.toLowerCase().includes(q) || 
                  item.tamilName.toLowerCase().includes(q) || 
                  item.category.toLowerCase().includes(q);
         }
-        // Category pill filter
         if (appState.activeCategory !== 'all' && item.category !== appState.activeCategory) {
           return false;
         }
         return true;
       });
 
-      countLabel.textContent = `Showing ${items.length} items`;
+      countDisplay.textContent = `${items.length} உணவுகள்`;
 
       if (items.length === 0) {
         container.innerHTML = `
           <div class="text-center py-10 text-slate-400">
-            <p class="text-xs font-bold">No dishes found matching your search</p>
+            <p class="text-xs font-bold">தேடலுக்குரிய உணவுகள் எதுவும் கிடைக்கவில்லை</p>
           </div>
         `;
         return;
       }
 
       container.innerHTML = items.map(item => {
-        const cartEntry = appState.cart.find(c => c.id === item.id);
-        const qty = cartEntry ? cartEntry.qty : 0;
+        const cartItem = appState.cart.find(c => c.id === item.id);
+        const qty = cartItem ? cartItem.qty : 0;
+        const savings = item.swiggyPrice - item.price;
 
         return `
-          <div class="bg-white border border-slate-200/80 rounded-2xl p-3 shadow-subtle hover:shadow-card transition flex gap-3.5">
-            <!-- Product Photo -->
-            <div class="relative w-23 h-23 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0">
+          <div class="bg-white border border-slate-200/90 rounded-2xl p-3 shadow-xs hover:shadow-card transition-all flex gap-3 relative">
+            <!-- Left Image & Badge -->
+            <div class="relative w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden bg-slate-100">
               <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
               ${item.bestseller ? `
-                <span class="absolute top-1 left-1 bg-brand-gold text-slate-950 font-black text-[8px] px-1.5 py-0.2 rounded uppercase">
+                <span class="absolute top-1 left-1 bg-amber-500 text-slate-950 font-black text-[8px] px-1.5 py-0.2 rounded shadow-xs uppercase">
                   Bestseller
                 </span>
               ` : ''}
             </div>
 
-            <!-- Details -->
+            <!-- Content -->
             <div class="flex-1 flex flex-col justify-between min-w-0">
               <div>
                 <div class="flex items-start justify-between gap-1">
                   <div>
                     <div class="flex items-center gap-1.5">
-                      <div class="veg-symbol"><div class="dot"></div></div>
+                      <div class="veg-box flex-shrink-0"><div class="veg-dot"></div></div>
                       <h4 class="text-xs font-black text-slate-900 leading-snug">${item.name}</h4>
                     </div>
                     <div class="flex items-center gap-1.5 mt-0.5">
                       <span class="text-[10px] text-slate-400 font-medium">${item.tamilName}</span>
-                      ${item.portion ? `<span class="text-[9px] font-bold text-slate-500 bg-slate-100 px-1 py-0.2 rounded">${item.portion}</span>` : ''}
+                      <span class="text-[9px] font-bold text-slate-500 bg-slate-100 px-1 py-0.2 rounded">${item.portion}</span>
                     </div>
                   </div>
                 </div>
@@ -1348,14 +1212,14 @@
                 </div>
               </div>
 
-              <!-- Price & Swiggy Comparison Row -->
-              <div class="mt-2 flex items-center justify-between pt-1 border-t border-slate-50">
+              <!-- Price & Add Stepper -->
+              <div class="mt-2 flex items-center justify-between pt-1 border-t border-slate-100">
                 <div>
                   <div class="flex items-baseline gap-1.5">
                     <span class="text-sm font-black text-slate-900">₹${item.price}</span>
                     <span class="text-[10px] text-slate-400 line-through font-semibold">₹${item.swiggyPrice}</span>
                     <span class="text-[8px] font-extrabold text-emerald-800 bg-emerald-100 px-1.5 py-0.2 rounded">
-                      Save ₹${item.swiggyPrice - item.price}
+                      Save ₹${savings}
                     </span>
                   </div>
                   <span class="text-[8px] text-slate-400 font-medium block mt-0.5">Swiggy ₹${item.swiggyPrice} • A2B Store Price</span>
@@ -1363,14 +1227,15 @@
 
                 <div>
                   ${qty === 0 ? `
-                    <button onclick="addToCart('${item.id}')" class="bg-white hover:bg-brand-red hover:text-white text-brand-red font-black text-xs px-3.5 py-1.5 rounded-xl border border-red-200 hover:border-brand-red transition shadow-xs">
-                      ADD +
+                    <button onclick="addToCart('${item.id}')" class="bg-red-50 hover:bg-a2b-red hover:text-white text-a2b-red font-black text-xs px-3.5 py-1.5 rounded-xl border border-red-200 hover:border-a2b-red transition shadow-xs flex items-center gap-1">
+                      <span>ADD</span>
+                      <span class="text-[10px] font-normal">+</span>
                     </button>
                   ` : `
-                    <div class="flex items-center bg-brand-red text-white rounded-xl overflow-hidden shadow-xs">
-                      <button onclick="updateCartItemQty('${item.id}', -1)" class="px-2.5 py-1 hover:bg-brand-redHover font-bold text-xs">-</button>
+                    <div class="flex items-center bg-a2b-red text-white rounded-xl overflow-hidden shadow-xs">
+                      <button onclick="updateQty('${item.id}', -1)" class="px-2.5 py-1 hover:bg-red-950 font-bold text-xs">-</button>
                       <span class="px-2 font-black text-xs">${qty}</span>
-                      <button onclick="updateCartItemQty('${item.id}', 1)" class="px-2.5 py-1 hover:bg-brand-redHover font-bold text-xs">+</button>
+                      <button onclick="updateQty('${item.id}', 1)" class="px-2.5 py-1 hover:bg-red-950 font-bold text-xs">+</button>
                     </div>
                   `}
                 </div>
@@ -1381,23 +1246,23 @@
       }).join('');
     }
 
-    function renderCartScreen() {
-      const emptyView = document.getElementById('cartEmptyView');
-      const filledView = document.getElementById('cartFilledView');
-      const listEl = document.getElementById('cartItemList');
+    function renderCart() {
+      const emptyState = document.getElementById('cartEmptyState');
+      const filledState = document.getElementById('cartFilledState');
+      const itemsList = document.getElementById('cartItemsList');
       const subtotalEl = document.getElementById('billSubtotal');
       const deliveryFeeEl = document.getElementById('billDeliveryFee');
       const tipAmountEl = document.getElementById('billTipAmount');
-      const taxesEl = document.getElementById('billTaxes');
+      const savingsEl = document.getElementById('billSavings');
       const finalTotalEl = document.getElementById('billFinalTotal');
-      const btnAmountEl = document.getElementById('btnCheckoutAmount');
-      const distanceText = document.getElementById('billDistanceText');
-      const riderPreview = document.getElementById('riderPayoutPreview');
+      const btnPayAmount = document.getElementById('btnPayAmount');
       const navDot = document.getElementById('navCartDot');
+      const distKmText = document.getElementById('billDistanceKmText');
+      const riderFeePreview = document.getElementById('riderFeePreview');
 
       const totalItems = appState.cart.reduce((sum, item) => sum + item.qty, 0);
 
-      // Nav bar badge
+      // Nav Dot
       if (totalItems > 0) {
         navDot.textContent = totalItems;
         navDot.classList.remove('hidden');
@@ -1410,186 +1275,169 @@
       renderFloatingCartBar();
 
       if (appState.cart.length === 0) {
-        emptyView.classList.remove('hidden');
-        filledView.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        filledState.classList.add('hidden');
         return;
       }
 
-      emptyView.classList.add('hidden');
-      filledView.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+      filledState.classList.remove('hidden');
 
-      let itemTotal = 0;
+      let subtotal = 0;
+      let totalSavings = 0;
 
-      listEl.innerHTML = appState.cart.map(cItem => {
-        const product = A2B_CATALOG.find(p => p.id === cItem.id);
-        if (!product) return '';
+      itemsList.innerHTML = appState.cart.map(cartItem => {
+        const item = A2B_CATALOG.find(m => m.id === cartItem.id);
+        if (!item) return '';
 
-        const lineTotal = product.price * cItem.qty;
-        itemTotal += lineTotal;
+        const itemTotal = item.price * cartItem.qty;
+        const itemSavings = (item.swiggyPrice - item.price) * cartItem.qty;
+        subtotal += itemTotal;
+        totalSavings += itemSavings;
 
         return `
           <div class="flex items-center justify-between pb-2.5 border-b border-slate-100 last:border-0 last:pb-0">
             <div class="flex items-center gap-2">
-              <div class="veg-symbol"><div class="dot"></div></div>
+              <div class="veg-box flex-shrink-0"><div class="veg-dot"></div></div>
               <div>
-                <div class="text-xs font-bold text-slate-800">${product.name}</div>
-                <div class="text-[10px] text-slate-400">₹${product.price} each</div>
+                <div class="text-xs font-bold text-slate-800">${item.name}</div>
+                <div class="text-[10px] text-slate-400">₹${item.price} each (Store Price)</div>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
               <div class="flex items-center bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
-                <button onclick="updateCartItemQty('${product.id}', -1)" class="px-2 py-0.5 text-xs font-bold text-slate-600 hover:bg-slate-200">-</button>
-                <span class="px-2 text-xs font-bold text-slate-900">${cItem.qty}</span>
-                <button onclick="updateCartItemQty('${product.id}', 1)" class="px-2 py-0.5 text-xs font-bold text-slate-600 hover:bg-slate-200">+</button>
+                <button onclick="updateQty('${item.id}', -1)" class="px-2 py-0.5 text-xs font-bold text-slate-600 hover:bg-slate-200">-</button>
+                <span class="px-2 text-xs font-bold text-slate-900">${cartItem.qty}</span>
+                <button onclick="updateQty('${item.id}', 1)" class="px-2 py-0.5 text-xs font-bold text-slate-600 hover:bg-slate-200">+</button>
               </div>
-              <span class="text-xs font-black text-slate-900 w-12 text-right">₹${lineTotal}</span>
+              <span class="text-xs font-black text-slate-900 w-12 text-right">₹${itemTotal}</span>
             </div>
           </div>
         `;
       }).join('');
 
-      // Distance fee calculation
-      const riderFee = calculateRiderDeliveryFee(appState.deliveryDistanceKm);
-      const taxes = Math.round(itemTotal * 0.05); // 5% GST on food
-      const finalTotal = itemTotal + (appState.orderType === 'delivery' ? riderFee : 0) + appState.tipAmount + taxes;
+      const deliveryFee = calculateRiderDeliveryFee(appState.deliveryDistanceKm);
+      const finalTotal = subtotal + deliveryFee + appState.tipAmount;
 
-      subtotalEl.textContent = `₹${itemTotal.toFixed(2)}`;
-      distanceText.textContent = `${appState.deliveryDistanceKm} km`;
-      deliveryFeeEl.textContent = appState.orderType === 'delivery' ? `₹${riderFee.toFixed(2)}` : '₹0.00 (Self Pickup)';
-      riderPreview.textContent = `₹${riderFee.toFixed(2)}`;
-      tipAmountEl.textContent = `₹${appState.tipAmount.toFixed(2)}`;
-      taxesEl.textContent = `₹${taxes.toFixed(2)}`;
-      finalTotalEl.textContent = `₹${finalTotal.toFixed(2)}`;
-      btnAmountEl.textContent = `₹${finalTotal.toFixed(2)}`;
+      subtotalEl.textContent = `₹${subtotal}.00`;
+      distKmText.textContent = `${appState.deliveryDistanceKm} km`;
+      deliveryFeeEl.textContent = appState.fulfillment === 'delivery' ? `₹${deliveryFee}.00 (Rider Fee)` : '₹0.00 (Self-Pickup)';
+      riderFeePreview.textContent = `₹${deliveryFee}.00`;
+      tipAmountEl.textContent = `₹${appState.tipAmount}.00`;
+      savingsEl.textContent = `₹${totalSavings}.00`;
+      finalTotalEl.textContent = `₹${finalTotal}.00`;
+      btnPayAmount.textContent = `(₹${finalTotal}) →`;
     }
 
     function renderFloatingCartBar() {
       const bar = document.getElementById('bottomFloatingCart');
-      const countBadge = document.getElementById('floatingBadgeCount');
-      const amountEl = document.getElementById('floatingCartAmount');
+      const countEl = document.getElementById('floatingBadgeCount');
+      const totalEl = document.getElementById('floatingCartAmount');
 
       const totalItems = appState.cart.reduce((sum, item) => sum + item.qty, 0);
 
       if (totalItems > 0 && appState.activeTab === 'home') {
-        let total = 0;
+        let subtotal = 0;
         appState.cart.forEach(ci => {
-          const item = A2B_CATALOG.find(p => p.id === ci.id);
-          if (item) total += item.price * ci.qty;
+          const item = A2B_CATALOG.find(m => m.id === ci.id);
+          if (item) subtotal += item.price * ci.qty;
         });
 
-        countBadge.textContent = totalItems;
-        amountEl.textContent = `₹${total.toFixed(2)} (${totalItems} ${totalItems > 1 ? 'items' : 'item'})`;
+        countEl.textContent = totalItems;
+        totalEl.textContent = `₹${subtotal}.00 (${totalItems} ${totalItems > 1 ? 'items' : 'item'})`;
         bar.classList.remove('hidden');
       } else {
         bar.classList.add('hidden');
       }
     }
 
-    function renderFullMenuAccordion() {
-      const container = document.getElementById('fullMenuAccordionContainer');
-      const categories = [
-        { key: 'food', title: 'உணவுகள் & சாப்பாடு (15 Foods)', desc: 'Pure Ghee Dosas, Idlis, Pongal, Vadas & Meals' },
-        { key: 'sweets', title: 'A2B பாரம்பரிய நெய் ஸ்வீட்ஸ் (10 Sweets)', desc: 'Signature Mysore Pak, Halwa, Kaju Katli & Laddus' },
-        { key: 'beverages', title: 'கும்பகோணம் டிகிரி ஃபில்டர் காபி', desc: 'Authentic Filter Coffee with fresh milk' }
-      ];
+    function updateHeaderAndWallet() {
+      document.getElementById('headerWalletBal').textContent = `₹${appState.walletBalance}`;
+      document.getElementById('headerPointsLabel').textContent = `⭐ ${appState.loyaltyPoints} Pts`;
+      document.getElementById('walletBalanceDisplay').textContent = `₹${appState.walletBalance}.00`;
+      document.getElementById('walletPointsDisplay').textContent = `${appState.loyaltyPoints} Pts`;
 
-      container.innerHTML = categories.map(cat => {
-        let items = A2B_CATALOG.filter(p => p.category === cat.key);
-        if (appState.menuFilter === 'bestseller') items = items.filter(p => p.bestseller);
-        if (appState.menuFilter === 'jain') items = items.filter(p => p.jain);
-
-        if (items.length === 0) return '';
-
-        return `
-          <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-subtle">
-            <div class="bg-slate-50 px-4 py-2.5 border-b border-slate-100 flex justify-between items-center">
-              <div>
-                <h3 class="text-xs font-black text-slate-900">${cat.title}</h3>
-                <p class="text-[10px] text-slate-500">${cat.desc}</p>
-              </div>
-              <span class="text-[10px] font-bold text-slate-400 bg-white border px-2 py-0.5 rounded-full">${items.length} dishes</span>
-            </div>
-
-            <div class="p-3 divide-y divide-slate-100">
-              ${items.map(dish => `
-                <div class="py-2.5 first:pt-0 last:pb-0 flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <div class="veg-symbol"><div class="dot"></div></div>
-                    <div>
-                      <div class="text-xs font-bold text-slate-800">${dish.name}</div>
-                      <div class="text-[10px] text-slate-400">${dish.tamilName} • ₹${dish.price}</div>
-                    </div>
-                  </div>
-                  <button onclick="addToCart('${dish.id}')" class="text-brand-red hover:bg-brand-redLight text-xs font-black px-2.5 py-1 rounded-lg border border-red-200">
-                    + Add
-                  </button>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `;
-      }).join('');
+      document.getElementById('headerCityLabel').textContent = appState.selectedBranch.city;
+      document.getElementById('headerBranchName').textContent = appState.selectedBranch.name;
     }
 
     // ==========================================
-    // USER ACTIONS & INTERACTIONS
+    // USER ACTIONS
     // ==========================================
+
+    function addToCart(itemId) {
+      const existing = appState.cart.find(ci => ci.id === itemId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        appState.cart.push({ id: itemId, qty: 1 });
+      }
+      renderMenu();
+      renderCart();
+    }
+
+    function updateQty(itemId, delta) {
+      const existing = appState.cart.find(ci => ci.id === itemId);
+      if (existing) {
+        existing.qty += delta;
+        if (existing.qty <= 0) {
+          appState.cart = appState.cart.filter(ci => ci.id !== itemId);
+        }
+      }
+      renderMenu();
+      renderCart();
+    }
+
+    function clearCart() {
+      appState.cart = [];
+      renderMenu();
+      renderCart();
+    }
 
     function switchTab(tabId) {
       appState.activeTab = tabId;
 
-      const tabs = ['home', 'menu', 'cart', 'profile', 'tracking'];
+      const tabs = ['home', 'cart', 'profile'];
       tabs.forEach(t => {
-        const screen = document.getElementById(`screen-${t}`);
+        const sec = document.getElementById(`tab-${t}`);
         const navBtn = document.getElementById(`nav-${t}`);
 
         if (t === tabId) {
-          screen.classList.remove('hidden');
-          screen.classList.add('block');
-          if (navBtn) {
-            navBtn.classList.remove('text-slate-400');
-            navBtn.classList.add('text-brand-red');
-          }
+          sec.classList.remove('hidden');
+          sec.classList.add('block');
+          navBtn.classList.remove('text-slate-400');
+          navBtn.classList.add('text-a2b-red');
         } else {
-          screen.classList.add('hidden');
-          screen.classList.remove('block');
-          if (navBtn) {
-            navBtn.classList.remove('text-brand-red');
-            navBtn.classList.add('text-slate-400');
-          }
+          sec.classList.add('hidden');
+          sec.classList.remove('block');
+          navBtn.classList.remove('text-a2b-red');
+          navBtn.classList.add('text-slate-400');
         }
       });
 
-      if (tabId === 'cart') renderCartScreen();
-      if (tabId === 'menu') renderFullMenuAccordion();
-      if (tabId === 'home') renderProductFeed();
+      if (tabId === 'cart') renderCart();
+      if (tabId === 'home') renderMenu();
       renderFloatingCartBar();
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function setCategoryFilter(catKey) {
-      appState.activeCategory = catKey;
+    function filterCategory(catId) {
+      appState.activeCategory = catId;
       
-      document.querySelectorAll('.category-chip').forEach(chip => {
-        chip.classList.remove('bg-brand-red', 'text-white', 'active');
-        chip.classList.add('bg-slate-100', 'text-slate-700');
+      document.querySelectorAll('.category-pill').forEach(p => {
+        p.classList.remove('bg-a2b-red', 'text-white', 'active');
+        p.classList.add('bg-slate-100', 'text-slate-700');
       });
 
-      const activeChip = document.getElementById(`cat-pill-${catKey}`);
-      if (activeChip) {
-        activeChip.classList.remove('bg-slate-100', 'text-slate-700');
-        activeChip.classList.add('bg-brand-red', 'text-white', 'active');
+      const activePill = document.getElementById(`pill-${catId}`);
+      if (activePill) {
+        activePill.classList.remove('bg-slate-100', 'text-slate-700');
+        activePill.classList.add('bg-a2b-red', 'text-white', 'active');
       }
 
-      renderProductFeed();
-    }
-
-    function quickFilterCategory(catKey) {
-      setCategoryFilter(catKey);
-      const feed = document.getElementById('productFeed');
-      feed.scrollIntoView({ behavior: 'smooth' });
+      renderMenu();
     }
 
     function handleSearch(val) {
@@ -1600,223 +1448,191 @@
       } else {
         clearBtn.classList.add('hidden');
       }
-      renderProductFeed();
+      renderMenu();
     }
 
     function clearSearch() {
       document.getElementById('globalSearchInput').value = '';
       appState.searchQuery = '';
       document.getElementById('clearSearchBtn').classList.add('hidden');
-      renderProductFeed();
+      renderMenu();
     }
 
-    function addToCart(itemId) {
-      const existing = appState.cart.find(c => c.id === itemId);
-      if (existing) {
-        existing.qty += 1;
+    function toggleFulfillment(type) {
+      appState.fulfillment = type;
+
+      const pLabel = document.getElementById('labelOptionPickup');
+      const dLabel = document.getElementById('labelOptionDelivery');
+      const distSection = document.getElementById('deliveryDistanceSection');
+      const tipSection = document.getElementById('tipSection');
+
+      if (type === 'pickup') {
+        pLabel.classList.add('border-a2b-red', 'bg-red-50/30');
+        pLabel.classList.remove('border-slate-200');
+        dLabel.classList.remove('border-a2b-red', 'bg-red-50/30');
+        dLabel.classList.add('border-slate-200');
+        distSection.classList.add('hidden');
+        tipSection.classList.add('hidden');
       } else {
-        appState.cart.push({ id: itemId, qty: 1 });
+        dLabel.classList.add('border-a2b-red', 'bg-red-50/30');
+        dLabel.classList.remove('border-slate-200');
+        pLabel.classList.remove('border-a2b-red', 'bg-red-50/30');
+        pLabel.classList.add('border-slate-200');
+        distSection.classList.remove('hidden');
+        tipSection.classList.remove('hidden');
       }
-      renderProductFeed();
-      renderCartScreen();
+
+      renderCart();
     }
 
-    function updateCartItemQty(itemId, delta) {
-      const existing = appState.cart.find(c => c.id === itemId);
-      if (existing) {
-        existing.qty += delta;
-        if (existing.qty <= 0) {
-          appState.cart = appState.cart.filter(c => c.id !== itemId);
-        }
-      }
-      renderProductFeed();
-      renderCartScreen();
-    }
-
-    function clearCart() {
-      appState.cart = [];
-      renderProductFeed();
-      renderCartScreen();
-    }
-
-    function updateDeliveryDistance(val) {
+    function handleDistanceChange(val) {
       appState.deliveryDistanceKm = parseFloat(val).toFixed(1);
-      document.getElementById('distanceNumberDisplay').textContent = `${appState.deliveryDistanceKm} km`;
-      renderCartScreen();
+      document.getElementById('distanceLabelDisplay').textContent = `${appState.deliveryDistanceKm} km`;
+      renderCart();
     }
 
-    function setOrderType(type) {
-      appState.orderType = type;
-      const distBlock = document.getElementById('deliveryDistanceBlock');
-      const tipBlock = document.getElementById('tipSection');
-      const deliveryRow = document.getElementById('billDeliveryFeeRow');
-      const dCard = document.getElementById('optDeliveryCard');
-      const pCard = document.getElementById('optPickupCard');
-
-      if (type === 'delivery') {
-        distBlock.classList.remove('hidden');
-        tipBlock.classList.remove('hidden');
-        deliveryRow.classList.remove('hidden');
-        dCard.classList.add('border-brand-red', 'bg-red-50/20');
-        pCard.classList.remove('border-brand-red', 'bg-red-50/20');
-      } else {
-        distBlock.classList.add('hidden');
-        tipBlock.classList.add('hidden');
-        deliveryRow.classList.add('hidden');
-        pCard.classList.add('border-brand-red', 'bg-red-50/20');
-        dCard.classList.remove('border-brand-red', 'bg-red-50/20');
-      }
-
-      renderCartScreen();
-    }
-
-    function setTip(amt) {
+    function applyTip(amt) {
       appState.tipAmount = amt;
-      document.getElementById('selectedTipLabel').textContent = amt > 0 ? `+₹${amt}` : '₹0';
-      
-      document.querySelectorAll('.tip-chip').forEach(c => {
-        c.classList.remove('bg-slate-900', 'text-white', 'active');
-        c.classList.add('bg-slate-100', 'text-slate-700');
+      document.getElementById('selectedTipDisplay').textContent = amt > 0 ? `+₹${amt}` : '₹0';
+
+      document.querySelectorAll('.tip-btn').forEach(b => {
+        b.classList.remove('bg-slate-900', 'text-white', 'active');
+        b.classList.add('bg-slate-100', 'text-slate-700');
       });
 
-      const selected = document.getElementById(`tip-${amt}`);
-      if (selected) {
-        selected.classList.remove('bg-slate-100', 'text-slate-700');
-        selected.classList.add('bg-slate-900', 'text-white', 'active');
+      const activeTipBtn = document.getElementById(`tip-btn-${amt}`);
+      if (activeTipBtn) {
+        activeTipBtn.classList.remove('bg-slate-100', 'text-slate-700');
+        activeTipBtn.classList.add('bg-slate-900', 'text-white', 'active');
       }
 
-      renderCartScreen();
+      renderCart();
     }
 
+    // PLACE ORDER FLOW
     function placeOrder() {
-      // Calculate order total
       let subtotal = 0;
       appState.cart.forEach(ci => {
-        const item = A2B_CATALOG.find(p => p.id === ci.id);
+        const item = A2B_CATALOG.find(m => m.id === ci.id);
         if (item) subtotal += item.price * ci.qty;
       });
-      const riderFee = calculateRiderDeliveryFee(appState.deliveryDistanceKm);
-      const total = subtotal + riderFee + appState.tipAmount + Math.round(subtotal * 0.05);
+      const deliveryFee = calculateRiderDeliveryFee(appState.deliveryDistanceKm);
+      const finalAmount = subtotal + deliveryFee + appState.tipAmount;
 
       // Deduct from A2B Wallet if available
-      if (appState.walletBalance >= total) {
-        appState.walletBalance -= total;
+      const payMethod = document.querySelector('input[name="payMethod"]:checked').value;
+      if (payMethod === 'wallet') {
+        if (appState.walletBalance >= finalAmount) {
+          appState.walletBalance -= finalAmount;
+        } else {
+          appState.walletBalance = 0;
+        }
       }
 
-      // Add loyalty points (5% return)
-      appState.loyaltyPoints += Math.round(total * 0.05);
+      // Add points (5% return)
+      const earnedPts = Math.round(finalAmount * 0.05);
+      appState.loyaltyPoints += earnedPts;
 
-      // Update UI displays
-      document.getElementById('profileWalletDisplay').textContent = `₹${appState.walletBalance.toFixed(2)}`;
-      document.getElementById('profilePointsDisplay').textContent = `${appState.loyaltyPoints} Pts`;
+      // Update Modal
+      document.getElementById('orderSuccessBranch').textContent = appState.selectedBranch.name;
+      document.getElementById('successFulfillmentMode').textContent = appState.fulfillment === 'pickup' 
+        ? '🛍️ Self Pickup (வரிசை இல்லை - கவுண்டரில் எடுத்துக்கொள்ளலாம்)' 
+        : `🛵 Doorstep Delivery (${appState.deliveryDistanceKm} km - உங்கள் முகவரிக்கு)`;
 
-      // Switch to tracking view
-      switchTab('tracking');
-      appState.cart = [];
-      renderCartScreen();
+      document.getElementById('successEtaText').textContent = appState.fulfillment === 'pickup'
+        ? 'இன்னும் 12 நிமிடங்களில்'
+        : 'இன்னும் 22-25 நிமிடங்களில்';
+
+      const riderCard = document.getElementById('successRiderCard');
+      if (appState.fulfillment === 'delivery') {
+        riderCard.classList.remove('hidden');
+      } else {
+        riderCard.classList.add('hidden');
+      }
+
+      // Open Success Modal
+      document.getElementById('modalOrderSuccess').classList.remove('hidden');
+      updateHeaderAndWallet();
     }
 
-    // Branch and Address Selection
-    function selectChennaiBranch(id, name, dist) {
+    function closeSuccessModalAndReset() {
+      appState.cart = [];
+      document.getElementById('modalOrderSuccess').classList.add('hidden');
+      switchTab('home');
+      renderCart();
+      renderMenu();
+    }
+
+    function selectBranch(id, name, dist) {
       appState.selectedBranch = {
         id: id,
         name: name,
         distanceKm: dist,
-        locality: name.split('(')[0].trim()
+        city: name.split('(')[0].trim() + ', Chennai'
       };
       appState.deliveryDistanceKm = dist;
       document.getElementById('distanceSlider').value = dist;
-      document.getElementById('distanceNumberDisplay').textContent = `${dist} km`;
-      document.getElementById('selectedBranchHeader').textContent = `${name} • ${dist} km`;
-      document.getElementById('trackingBranchName').textContent = name;
+      document.getElementById('distanceLabelDisplay').textContent = `${dist} km`;
 
-      closeBranchDrawer();
-      renderCartScreen();
+      closeBranchModal();
+      updateHeaderAndWallet();
+      renderCart();
     }
 
     function selectAddress(type) {
       const addresses = {
-        home: { type: 'Home', title: 'Home (Adyar)', full: '4th Main Road, Gandhi Nagar, Adyar, Chennai - 600020' },
-        work: { type: 'Work', title: 'Work (OMR IT Park)', full: 'Tidel Park, Tharamani, OMR, Chennai - 600113' },
-        mylapore: { type: 'Parents', title: 'Parents (Mylapore)', full: 'North Mada Street, Mylapore, Chennai - 600004' }
+        home: { type: 'Home', title: 'Home (Adyar)', sub: '4th Main Road, Gandhi Nagar, Adyar, Chennai - 600020' },
+        work: { type: 'Work', title: 'Work (OMR IT Park)', sub: 'Tidel Park, Tharamani, OMR, Chennai - 600113' },
+        mylapore: { type: 'Parents', title: 'Parents (Mylapore)', sub: 'North Mada Street, Mylapore, Chennai - 600004' }
       };
 
       appState.currentAddress = addresses[type];
-      document.getElementById('currentAddressType').textContent = `Deliver to ${addresses[type].type}`;
-      document.getElementById('cartAddressTitle').textContent = addresses[type].title;
-      document.getElementById('cartAddressFull').textContent = addresses[type].full;
+      document.getElementById('cartAddressHeading').textContent = `Deliver to ${addresses[type].title}`;
+      document.getElementById('cartAddressSub').textContent = addresses[type].sub;
 
       ['home', 'work', 'mylapore'].forEach(k => {
         const card = document.getElementById(`addr-card-${k}`);
         const chk = document.getElementById(`addr-check-${k}`);
         if (k === type) {
-          card.classList.add('bg-red-50/40', 'border-brand-red');
+          card.classList.add('bg-red-50/40', 'border-a2b-red');
           chk.textContent = '✓';
           chk.classList.remove('text-slate-300');
-          chk.classList.add('text-brand-red');
+          chk.classList.add('text-a2b-red');
         } else {
-          card.classList.remove('bg-red-50/40', 'border-brand-red');
+          card.classList.remove('bg-red-50/40', 'border-a2b-red');
           chk.textContent = '';
         }
       });
     }
 
-    function openBranchDrawer() {
-      document.getElementById('drawerBranches').classList.remove('hidden');
-    }
-    function closeBranchDrawer() {
-      document.getElementById('drawerBranches').classList.add('hidden');
-    }
-
-    function topUpWallet(amount) {
-      appState.walletBalance += amount;
-      document.getElementById('profileWalletDisplay').textContent = `₹${appState.walletBalance.toFixed(2)}`;
-      alert(`₹${amount} added successfully to your A2B Pay Wallet via UPI!`);
+    function quickTopUp(amt) {
+      appState.walletBalance += amt;
+      appState.loyaltyPoints += Math.round(amt * 0.05);
+      updateHeaderAndWallet();
+      alert(`₹${amt} வாலட்டில் வெற்றிகரமாக சேர்க்கப்பட்டது!`);
     }
 
-    function reorderFast() {
-      appState.cart = [
-        { id: 'f-ghee-roast', qty: 2 },
-        { id: 's-mysore-pak', qty: 1 }
-      ];
-      switchTab('cart');
-    }
+    function openBranchModal() { document.getElementById('modalBranch').classList.remove('hidden'); }
+    function closeBranchModal() { document.getElementById('modalBranch').classList.add('hidden'); }
 
-    function filterMenuByType(type) {
-      appState.menuFilter = type;
-      document.querySelectorAll('.menu-type-btn').forEach(b => {
-        b.classList.remove('bg-slate-900', 'text-white', 'active');
-        b.classList.add('bg-slate-100', 'text-slate-700');
-      });
-      event.target.classList.remove('bg-slate-100', 'text-slate-700');
-      event.target.classList.add('bg-slate-900', 'text-white', 'active');
-      renderFullMenuAccordion();
-    }
-
-    function editProfileAlert() { alert('Profile edit modal: You can update your phone, email, and preferences.'); }
-    function redeemPointsAlert() { alert('You have 280 A2B Points worth ₹140. Points can be redeemed at checkout!'); }
-    function addNewAddressAlert() { alert('Add address: Pin your Chennai location on the map.'); }
-    function toggleJainPreference(isChecked) {
-      if (isChecked) {
-        alert('Jain preference activated: Only dishes without onion, garlic, or root vegetables will be recommended.');
-      }
-    }
-
-    // System clock simulation in header
+    // Desktop clock
     function updateClock() {
       const now = new Date();
       let hours = now.getHours();
       let minutes = now.getMinutes();
       minutes = minutes < 10 ? '0' + minutes : minutes;
-      document.getElementById('statusBarTime').textContent = `${hours}:${minutes}`;
+      const el = document.getElementById('statusBarTime');
+      if (el) el.textContent = `${hours}:${minutes}`;
     }
 
     // Init App
     document.addEventListener('DOMContentLoaded', () => {
       updateClock();
       setInterval(updateClock, 30000);
-      renderProductFeed();
-      renderCartScreen();
+      updateHeaderAndWallet();
+      renderMenu();
+      renderCart();
+      toggleFulfillment('pickup');
     });
   </script>
 </body>
