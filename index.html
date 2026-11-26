@@ -175,10 +175,10 @@
               
               <div class="mt-3.5 flex items-center gap-2">
                 <button onclick="quickFilterCategory('sweets')" class="bg-white text-brand-red hover:bg-red-50 text-xs font-extrabold px-3.5 py-2 rounded-xl shadow-sm transition">
-                  Order Sweets
+                  Order Sweets (10)
                 </button>
-                <button onclick="quickFilterCategory('tiffin')" class="bg-black/20 hover:bg-black/30 text-white text-xs font-bold px-3 py-2 rounded-xl border border-white/20 transition">
-                  Morning Tiffin
+                <button onclick="quickFilterCategory('food')" class="bg-black/20 hover:bg-black/30 text-white text-xs font-bold px-3 py-2 rounded-xl border border-white/20 transition">
+                  Food & Meals (15)
                 </button>
               </div>
             </div>
@@ -186,7 +186,7 @@
             <img 
               src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=300&auto=format&fit=crop&q=80" 
               alt="A2B Special Dosa"
-              class="absolute -right-7 top-4 w-36 h-36 object-cover rounded-full border-4 border-white/10 shadow-2xl pointer-events-none"
+              class="absolute -right-7 top-4 w-32 h-32 md:w-36 md:h-36 object-cover rounded-full border-4 border-white/10 shadow-2xl pointer-events-none opacity-80 md:opacity-100"
             >
           </div>
         </div>
@@ -206,7 +206,7 @@
                 <p class="text-[10px] text-slate-500 font-medium">Crispy dosas, hot sambar & degree filter coffee</p>
               </div>
             </div>
-            <button onclick="quickFilterCategory('tiffin')" class="text-xs font-extrabold text-brand-red hover:text-brand-redHover">
+            <button onclick="quickFilterCategory('food')" class="text-xs font-extrabold text-brand-red hover:text-brand-redHover">
               View →
             </button>
           </div>
@@ -220,27 +220,18 @@
           </div>
 
           <!-- Category Chips -->
-          <div class="px-5 flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-1">
+          <div class="px-5 flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
             <button onclick="setCategoryFilter('all')" id="cat-pill-all" class="category-chip active flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-brand-red text-white shadow-sm transition">
-              All Items
+              All Items (26)
             </button>
-            <button onclick="setCategoryFilter('tiffin')" id="cat-pill-tiffin" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              🥞 Tiffin
+            <button onclick="setCategoryFilter('food')" id="cat-pill-food" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+              🥞 உணவுகள் / Food (15)
             </button>
             <button onclick="setCategoryFilter('sweets')" id="cat-pill-sweets" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              🍯 Sweets
-            </button>
-            <button onclick="setCategoryFilter('karam')" id="cat-pill-karam" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              🌶️ Savouries / Karam
-            </button>
-            <button onclick="setCategoryFilter('meals')" id="cat-pill-meals" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              🍛 Meals & Thali
-            </button>
-            <button onclick="setCategoryFilter('chaat')" id="cat-pill-chaat" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              🥟 Chaat & Snacks
+              🍯 ஸ்வீட்ஸ் / Sweets (10)
             </button>
             <button onclick="setCategoryFilter('beverages')" id="cat-pill-beverages" class="category-chip flex-shrink-0 px-3.5 py-2 rounded-2xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-              ☕ Beverages
+              ☕ டிகிரி காபி / Coffee (1)
             </button>
           </div>
         </div>
@@ -828,12 +819,14 @@
     // AUTHENTIC A2B CHENNAI MENU DATABASE
     // ==========================================
     const A2B_CATALOG = [
-      // TIFFIN (Morning & Evening)
+      // ==========================================
+      // 15 AUTHENTIC A2B FOOD ITEMS (TIFFIN & MEALS)
+      // ==========================================
       {
-        id: 't-ghee-roast',
+        id: 'f-ghee-roast',
         name: 'Special Ghee Roast Dosa',
         tamilName: 'ஸ்பெஷல் நெய் ரோஸ்ட்',
-        category: 'tiffin',
+        category: 'food',
         price: 85,
         rating: 4.9,
         reviews: 3240,
@@ -843,10 +836,10 @@
         image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 't-sambar-idli',
+        id: 'f-sambar-mini-idli',
         name: 'Ghee Sambar Mini Idli (14 pcs)',
         tamilName: 'மினி நெய் இட்லி சாம்பார்',
-        category: 'tiffin',
+        category: 'food',
         price: 75,
         rating: 4.9,
         reviews: 2180,
@@ -856,10 +849,10 @@
         image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 't-pongal-vada',
+        id: 'f-pongal-vada',
         name: 'Ghee Ven Pongal with Medu Vada',
         tamilName: 'வெண் பொங்கல் & வடை காம்போ',
-        category: 'tiffin',
+        category: 'food',
         price: 95,
         rating: 4.8,
         reviews: 1890,
@@ -869,23 +862,36 @@
         image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 't-medu-vada',
-        name: 'Crispy Medu Vada (1 pc)',
-        tamilName: 'மொறுமொறு மெது வடை',
-        category: 'tiffin',
-        price: 25,
+        id: 'f-steamed-idli',
+        name: 'Malligai Poo Idli (2 pcs) with Vada',
+        tamilName: 'மல்லிகைப் பூ இட்லி வடை காம்போ',
+        category: 'food',
+        price: 55,
+        rating: 4.8,
+        reviews: 1420,
+        bestseller: false,
+        jain: true,
+        desc: 'Feather-soft steamed rice cakes paired with crispy medu vada, fresh coconut & tomato chutney.',
+        image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-crispy-vada',
+        name: 'Crispy Medu Vada (2 pcs)',
+        tamilName: 'மொறுமொறு மெது வடை (2 எண்ணம்)',
+        category: 'food',
+        price: 50,
         rating: 4.7,
         reviews: 940,
         bestseller: false,
         jain: false,
-        desc: 'Golden-fried urad dal fritter with a crunchy crust and fluffy interior.',
+        desc: 'Golden-fried urad dal fritters with a crunchy crust and fluffy interior.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 't-podi-dosa',
+        id: 'f-podi-dosa',
         name: 'Spicy Idli Podi Ghee Dosa',
-        tamilName: 'பொடி நெய் தோசை',
-        category: 'tiffin',
+        tamilName: 'ஸ்பெஷல் பொடி நெய் தோசை',
+        category: 'food',
         price: 95,
         rating: 4.9,
         reviews: 1450,
@@ -895,20 +901,126 @@
         image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 't-poori-masala',
+        id: 'f-rava-masala',
+        name: 'Crispy Rava Masala Dosa',
+        tamilName: 'மொறுமொறு ரவா மசாலா தோசை',
+        category: 'food',
+        price: 105,
+        rating: 4.8,
+        reviews: 1680,
+        bestseller: true,
+        jain: false,
+        desc: 'Semolina crepe laced with peppercorns, cashews & green chillies with potato masala.',
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-onion-uttappam',
+        name: 'Onion Uttappam in Pure Ghee',
+        tamilName: 'வெங்காய நெய் ஊத்தப்பம்',
+        category: 'food',
+        price: 95,
+        rating: 4.8,
+        reviews: 1250,
+        bestseller: false,
+        jain: false,
+        desc: 'Thick soft rice pancake studded with caramelised shallots and pure ghee.',
+        image: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-poori-masala',
         name: 'Poori Masala (2 pcs)',
-        tamilName: 'பூரி மசாலா (2 எண்ணம்)',
-        category: 'tiffin',
+        tamilName: 'பூரி உருளைக்கிழங்கு மசாலா',
+        category: 'food',
         price: 80,
         rating: 4.8,
         reviews: 1120,
         bestseller: false,
         jain: false,
-        desc: 'Fluffy whole-wheat puffed breads served with mild potato masala.',
+        desc: 'Golden puffed wheat puris served with mildly spiced potato masala.',
         image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
       },
+      {
+        id: 'f-chola-poori',
+        name: 'Chola Poori with Chana Masala',
+        tamilName: 'பெரிய சோழா பூரி & சென்னா',
+        category: 'food',
+        price: 115,
+        rating: 4.9,
+        reviews: 1750,
+        bestseller: true,
+        jain: false,
+        desc: 'Large puffed bhatura served with rich North-Indian style spiced chickpeas gravy.',
+        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-south-meals',
+        name: 'A2B Grand South Indian Meals (Thali)',
+        tamilName: 'A2B ஸ்பெஷல் தென்னிந்திய சாப்பாடு',
+        category: 'food',
+        price: 175,
+        rating: 4.9,
+        reviews: 6400,
+        bestseller: true,
+        jain: false,
+        desc: 'Complete feast: Ponni rice, Sambar, Rasam, Vatha Kuzhambu, 2 Poriyals, Appalam, Curd & Sweet.',
+        image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-mini-meals',
+        name: 'Executive Mini Meals',
+        tamilName: 'அலுவலக மினி சாப்பாடு',
+        category: 'food',
+        price: 115,
+        rating: 4.7,
+        reviews: 2100,
+        bestseller: false,
+        jain: false,
+        desc: 'Portioned lunch with Sambar rice, Curd rice, vegetable poriyal, appalam and pickle.',
+        image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-sambar-rice',
+        name: 'Ghee Sambar Rice with Potato Roast',
+        tamilName: 'நெய் சாம்பார் சாதம் & உருளை வறுவல்',
+        category: 'food',
+        price: 85,
+        rating: 4.8,
+        reviews: 1650,
+        bestseller: false,
+        jain: false,
+        desc: 'Aromatic bisibelebath style sambar rice drizzled with ghee and served with spicy roasted potatoes.',
+        image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-curd-rice',
+        name: 'Traditional Curd Rice with Mor Milagai',
+        tamilName: 'பாரம்பரிய தயிர் சாதம்',
+        category: 'food',
+        price: 70,
+        rating: 4.8,
+        reviews: 1950,
+        bestseller: false,
+        jain: true,
+        desc: 'Creamy curd rice tempered with mustard, ginger, green chillies & mor milagai.',
+        image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'f-madras-mixture',
+        name: 'Madras Special Mixture (200g)',
+        tamilName: 'மதராஸ் ஸ்பெஷல் மிக்சர்',
+        category: 'food',
+        price: 75,
+        rating: 4.9,
+        reviews: 8700,
+        bestseller: true,
+        jain: false,
+        desc: 'Classic blend of spicy sev, fried cashews, peanuts, curry leaves & boondi.',
+        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
+      },
 
-      // SWEETS (A2B Signature)
+      // ==========================================
+      // 10 AUTHENTIC A2B TRADITIONAL SWEETS
+      // ==========================================
       {
         id: 's-mysore-pak',
         name: 'Special Ghee Mysore Pak (250g)',
@@ -938,7 +1050,7 @@
       {
         id: 's-motichoor-laddu',
         name: 'Motichoor Laddu (250g)',
-        tamilName: 'மோதிசூர் லட்டு (250g)',
+        tamilName: 'நெய் மோதிசூர் லட்டு (250g)',
         category: 'sweets',
         price: 155,
         rating: 4.8,
@@ -961,92 +1073,88 @@
         desc: 'Slow-cooked whole wheat milk pudding rich in ghee and cashew nuts.',
         image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
       },
-
-      // SAVOURIES & KARAM
       {
-        id: 'k-madras-mixture',
-        name: 'Madras Special Mixture (200g)',
-        tamilName: 'மதராஸ் ஸ்பெஷல் மிக்சர்',
-        category: 'karam',
-        price: 75,
+        id: 's-badam-halwa',
+        name: 'Pure Badam Halwa (100g)',
+        tamilName: 'அசல் பாதாம் பருப்பு அல்வா',
+        category: 'sweets',
+        price: 140,
         rating: 4.9,
-        reviews: 8700,
+        reviews: 1850,
         bestseller: true,
-        jain: false,
-        desc: 'Classic blend of spicy sev, fried cashews, peanuts, curry leaves & boondi.',
+        jain: true,
+        desc: 'Rich almond paste cooked with whole milk, saffron and pure desi ghee.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 'k-ribbon-pakoda',
-        name: 'Ribbon Pakoda (200g)',
-        tamilName: 'ரிப்பன் பக்கோடா (200g)',
-        category: 'karam',
-        price: 70,
-        rating: 4.7,
-        reviews: 1650,
+        id: 's-jangri',
+        name: 'Mini Ghee Jangri (250g)',
+        tamilName: 'தேனில் ஊறிய மினி நெய் ஜாங்கிரி',
+        category: 'sweets',
+        price: 150,
+        rating: 4.8,
+        reviews: 2150,
         bestseller: false,
         jain: true,
-        desc: 'Crisp ribbon-shaped savoury strips spiced with red chilli and asafoetida.',
+        desc: 'Juicy, rose-scented circular swirls fried in ghee and dipped in warm syrup.',
+        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 's-malai-peda',
+        name: 'Special Malai Peda (250g)',
+        tamilName: 'சுத்தமான பால்கோவா மலை பேடா',
+        category: 'sweets',
+        price: 160,
+        rating: 4.7,
+        reviews: 1320,
+        bestseller: false,
+        jain: true,
+        desc: 'Condensed milk fudge delicately spiced with cardamom and garnished with pistachios.',
+        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 's-dryfruit-halwa',
+        name: 'Royal Dry Fruit Halwa (250g)',
+        tamilName: 'ராயல் டிரை ஃப்ரூட்ஸ் அல்வா',
+        category: 'sweets',
+        price: 240,
+        rating: 4.9,
+        reviews: 1670,
+        bestseller: false,
+        jain: true,
+        desc: 'Nutritious dates, figs, almonds, cashews and pistachio cubes with zero refined sugar.',
         image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 'k-kai-murukku',
-        name: 'Traditional Kai Murukku (200g)',
-        tamilName: 'பாரம்பரிய கை முறுக்கு (200g)',
-        category: 'karam',
+        id: 's-kaju-roll',
+        name: 'Kaju Pista Roll (250g)',
+        tamilName: 'காஜு பிஸ்தா ரோல்',
+        category: 'sweets',
+        price: 275,
+        rating: 4.9,
+        reviews: 2300,
+        bestseller: true,
+        jain: true,
+        desc: 'Cashew sheets rolled around crushed roasted pistachios with silver vark.',
+        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 's-rasamalai',
+        name: 'Saffron Rasamalai (2 pcs)',
+        tamilName: 'குங்குமப்பூ ரசமலாய்',
+        category: 'sweets',
         price: 80,
         rating: 4.9,
-        reviews: 3100,
+        reviews: 4100,
         bestseller: true,
         jain: true,
-        desc: 'Handmade spiral crunchy murukku prepared with pure butter and rice flour.',
-        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
+        desc: 'Spongy cottage cheese patties steeped in saffron and cardamom flavored clotted cream.',
+        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
       },
 
-      // MEALS & THALI
-      {
-        id: 'm-south-meals',
-        name: 'A2B Special South Indian Meals',
-        tamilName: 'A2B ஸ்பெஷல் தென்னிந்திய சாப்பாடு',
-        category: 'meals',
-        price: 175,
-        rating: 4.9,
-        reviews: 6400,
-        bestseller: true,
-        jain: false,
-        desc: 'Complete feast: Ponni rice, Sambar, Rasam, Vatha Kuzhambu, 2 Poriyals, Appalam, Curd & Sweet.',
-        image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
-      },
-      {
-        id: 'm-curd-rice',
-        name: 'South Indian Curd Rice with Pickle',
-        tamilName: 'தயிர் சாதம் & வறுவல்',
-        category: 'meals',
-        price: 70,
-        rating: 4.8,
-        reviews: 1950,
-        bestseller: false,
-        jain: true,
-        desc: 'Comforting curd rice tempered with mustard, ginger, green chillies & mor milagai.',
-        image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?w=400&auto=format&fit=crop&q=80'
-      },
-
-      // CHAAT & EVENING
-      {
-        id: 'c-pani-puri',
-        name: 'A2B Special Pani Puri (8 pcs)',
-        tamilName: 'ஸ்பெஷல் பானி பூரி (8 pcs)',
-        category: 'chaat',
-        price: 60,
-        rating: 4.7,
-        reviews: 2100,
-        bestseller: false,
-        jain: false,
-        desc: 'Crisp puris stuffed with spiced potatoes and tangy mint coriander water.',
-        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
-      },
-
-      // BEVERAGES
+      // ==========================================
+      // ICONIC BEVERAGE
+      // ==========================================
       {
         id: 'b-degree-coffee',
         name: 'Kumbakonam Degree Filter Coffee',
@@ -1087,7 +1195,7 @@
       walletBalance: 450.00,
       loyaltyPoints: 280,
       cart: [
-        { id: 't-ghee-roast', qty: 1 } // Preloaded with 1 Dosa
+        { id: 'f-ghee-roast', qty: 1 } // Preloaded with 1 Dosa
       ]
     };
 
@@ -1315,11 +1423,9 @@
     function renderFullMenuAccordion() {
       const container = document.getElementById('fullMenuAccordionContainer');
       const categories = [
-        { key: 'tiffin', title: 'Breakfast & Evening Tiffin', desc: 'Idlis, Dosas, Vadas & Pongal' },
-        { key: 'sweets', title: 'Traditional Pure Ghee Sweets', desc: 'Signature Mysore Pak, Halwa & Laddus' },
-        { key: 'karam', title: 'Savouries & Karam', desc: 'Madras Mixture, Murukku & Pakoda' },
-        { key: 'meals', title: 'South Indian Meals & Thali', desc: 'Full Meals & Rice Varieties' },
-        { key: 'beverages', title: 'Degree Coffee & Drinks', desc: 'Filter Coffee & Fresh Juices' }
+        { key: 'food', title: 'உணவுகள் & சாப்பாடு (15 Foods)', desc: 'Pure Ghee Dosas, Idlis, Pongal, Vadas & Meals' },
+        { key: 'sweets', title: 'A2B பாரம்பரிய நெய் ஸ்வீட்ஸ் (10 Sweets)', desc: 'Signature Mysore Pak, Halwa, Kaju Katli & Laddus' },
+        { key: 'beverages', title: 'கும்பகோணம் டிகிரி ஃபில்டர் காபி', desc: 'Authentic Filter Coffee with fresh milk' }
       ];
 
       container.innerHTML = categories.map(cat => {
@@ -1604,7 +1710,7 @@
 
     function reorderFast() {
       appState.cart = [
-        { id: 't-ghee-roast', qty: 2 },
+        { id: 'f-ghee-roast', qty: 2 },
         { id: 's-mysore-pak', qty: 1 }
       ];
       switchTab('cart');
